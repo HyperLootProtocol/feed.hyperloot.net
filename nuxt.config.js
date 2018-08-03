@@ -36,5 +36,13 @@ module.exports = {
   modules: [
     '@nuxtjs/axios',
   ],
+
+  generate: {
+    routes: [
+      '/',
+      '/test',
+      '/test2'
+    ]
+  }
 }
 
