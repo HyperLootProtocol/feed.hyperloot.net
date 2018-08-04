@@ -15,6 +15,8 @@
         <span>[{{post.tag}}]</span>
       </div>
     </div>
+
+    <button class="more" @click="loadMore()">Load more</button>
   </div>
 </template>
 
@@ -61,6 +63,9 @@ export default {
     removeTag(tag) {
       this.$store.commit('REMOVE_TAG', tag);
       this.$store.dispatch('getPosts');
+    },
+    loadMore() {
+      this.$store.dispatch('getPosts', { more: true });
     }
   },
   computed: {
