@@ -1,0 +1,27 @@
+html {
+  font-size: 10px;
+  font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif;
+  background: #fff;
+  color: #222;
+}
+
+body {
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+b, strong, a, h1, h2 {
+  font-weight: bold;
+}
+
+a {
+  color: #f53743;
+  text-decoration: none;
+}
+
+::selection {
+  color: white;
+  background: #f53743;
+}

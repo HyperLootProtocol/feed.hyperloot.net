@@ -4,7 +4,7 @@
 
     <div class="filter">
       <span v-for="tag in $store.state.tags" :key="tag" @click="removeTag(tag)">{{tag}}</span>
-      <input v-on:keyup.enter="addTag()" v-model="name" />
+      <input v-on:keyup.enter="addTag()" v-model="name" placeholder="add tag..." />
     </div>
 
     <div class="list">
@@ -24,11 +24,13 @@
   .post {
     margin-bottom: 1rem;
     padding: 1rem;
-    background: #f0f0f0;
+    background: #FFFCFC;
+    font-size: 1.4rem;
   }
 
   .post a {
     display: block;
+    font-size: 1.7rem;
   }
 
   .filter {
@@ -39,9 +41,27 @@
   }
 
   .filter span {
-    padding: 1rem;
+    padding: .5rem 1rem;
     margin-right: 1rem;
-    background: #f0f0f0;
+    background: #f53743;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 1rem;
+  }
+
+  .filter input {
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    background: #FFFCFC;
+  }
+
+  .more {
+    background: #f53743;
+    color: #fff;
+    border: 0;
+    font-size: 2rem;
+    padding: 1rem 2rem;
     cursor: pointer;
   }
 </style>
