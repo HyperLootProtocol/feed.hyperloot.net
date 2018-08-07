@@ -1,4 +1,11 @@
 /*!
+ * is-extendable <https://github.com/jonschlinkert/is-extendable>
+ *
+ * Copyright (c) 2015, Jon Schlinkert.
+ * Licensed under the MIT License.
+ */
+
+/*!
  * Vue.js v2.5.17
  * (c) 2014-2018 Evan You
  * Released under the MIT License.
@@ -15,6 +22,12 @@
  *
  * @author   Feross Aboukhadijeh <https://feross.org>
  * @license  MIT
+ */
+
+/*!
+ * vue-social-sharing v2.3.3 
+ * (c) 2017 nicolasbeauvais
+ * Released under the MIT License.
  */
 
 /*!
