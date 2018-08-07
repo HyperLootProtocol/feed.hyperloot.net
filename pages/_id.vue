@@ -1,6 +1,6 @@
 <template>
   <div class="wrapper">
-    <section class="list">
+    <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
       <div class="filter">
         <span v-for="tag in $store.state.tags" :key="tag" @click="removeTag(tag)" class="button">{{tag}}</span>
         <input v-on:keyup.enter="addTag()" v-model="name" placeholder="add tag..." />
@@ -16,7 +16,7 @@
       <button class="button more" @click="loadMore()">Load more</button>
     </section>
 
-    <section class="content">
+    <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
       <nuxt-link to="/" class="button close" v-if="$store.state.post.id">Close</nuxt-link>
 
       <span v-if="$store.state.loading" class="loading">Loading...</span>
@@ -206,6 +206,17 @@
     filter: invert(100%);
     background: #fff;
     padding: .5rem;
+  }
+
+
+  @media (max-width: 960px) {
+    .list.active {
+      display: none;
+    }
+
+    .content:not(.active) {
+      display: none;
+    }
   }
 </style>
 
