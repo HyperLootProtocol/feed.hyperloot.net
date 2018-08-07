@@ -1,11 +1,14 @@
 import Vuex from 'vuex';
 import moment from 'moment';
 
+const delimiter = '*';
+
 function filterPosts({ data }) {
   return data.children.map(({ data: { url, title, id, subreddit, created_utc, created }}) => ({
     url,
     title,
     id,
+    innerId: `reddit${delimiter}${subreddit}${delimiter}${id}`,
     tag: subreddit,
     created,
     time: moment.unix(created_utc).fromNow()
@@ -16,6 +19,7 @@ const createStore = () => {
   return new Vuex.Store({
     state: {
       posts: [],
+      post: {},
       loading: false,
       tags: ['hyperloot', 'destiny2', 'PUBG', 'FORTnITE', 'DotA2', 'leagueoflegends', 'GlobalOffensive', 'Overwatch', 'wow', 'hearthstone'],
       after: {},
@@ -38,9 +42,23 @@ const createStore = () => {
       },
       SET_LOADING(state, loading) {
         state.loading = loading;
+      },
+      SET_POST(state, post) {
+        state.post = post;
       }
     },
     actions: {
+      async getPost({ commit, state }, id) {
+        commit('SET_LOADING', true);
+        const [from, ...parsedId] = id.split(delimiter);
+        const uId = parsedId.join('/');
+
+
+        const response = await this.$axios.get(`https://www.reddit.com/r/${uId}.json`);
+        const post = response.data[0].data.children[0].data;
+        commit('SET_POST', post);
+        commit('SET_LOADING', false);
+      },
       async getPosts({ commit, state }, { more = false } = {}) {
         commit('SET_LOADING', true);
 

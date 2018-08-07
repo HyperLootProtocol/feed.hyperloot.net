@@ -6,10 +6,6 @@ html {
 }
 
 body {
-  height: 100vh;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
 }
 
 b, strong, a, h1, h2 {

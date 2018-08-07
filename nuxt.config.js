@@ -42,6 +42,10 @@ module.exports = {
     '@nuxtjs/axios',
   ],
 
+  plugins: [
+    { src: '~plugins/social.js' }
+  ],
+
   generate: {
     routes: [
       '/',

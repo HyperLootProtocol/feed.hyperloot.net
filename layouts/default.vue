@@ -1,6 +1,5 @@
 <template>
-  <div class="wrapper">
-
+  <div class="layout">
     <nav class="social">
       <a href="https://hyperloot.net/" target="_blank" class="logo"><img src="~/assets/logo.svg" width="36"></a>
       <a href="https://www.facebook.com/pg/401874386882912" target="_blank"><img src="~/assets/facebook.svg" width="22"></a>
@@ -19,8 +18,8 @@
 </template>
 
 <style scoped>
-  .wrapper {
-    padding: 0 2rem 2rem 7rem;
+  .layout {
+    padding-left: 8rem;
   }
 
   .social {
@@ -28,7 +27,7 @@
     left: 0;
     top: 0;
     bottom: 0;
-    background: #fcfcfc;
+    background: #f9f9f9;
     display: flex;
     flex-direction: column;
     padding: 1rem;
