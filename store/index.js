@@ -52,7 +52,8 @@ const createStore = () => {
         commit('SET_LOADING', true);
         const [from, ...parsedId] = id.split(delimiter);
         const uId = parsedId.join('/');
-
+        const params = {
+        };
 
         const response = await this.$axios.get(`https://www.reddit.com/r/${uId}.json`);
         const post = response.data[0].data.children[0].data;
