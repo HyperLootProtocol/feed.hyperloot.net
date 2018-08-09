@@ -56,7 +56,9 @@ const createStore = () => {
             headers: { 'X-Requested-With': true }
         };
 
-        const response = await this.$axios.get(`/api/proxy/r/${uId}.json`, params);
+        const response = await this.$axios.get(`/api/proxy/r/${uId}.json`, params).catch(err => {
+          return this.$axios.get(`https://www.reddit.com/r/${uId}.json`, params)
+        });
         const post = response.data[0].data.children[0].data;
         commit('SET_POST', post);
         commit('SET_LOADING', false);
