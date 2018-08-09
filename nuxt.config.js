@@ -52,6 +52,10 @@ module.exports = {
       '/test',
       '/test2'
     ]
-  }
+  },
+
+  serverMiddleware: [
+    '~/api/index.js'
+  ]
 }
 
