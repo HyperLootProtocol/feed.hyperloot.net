@@ -49,8 +49,8 @@ module.exports = {
   generate: {
     routes: [
       '/',
-      '/test',
-      '/test2'
+      // '/test',
+      // '/test2'
     ]
   },
 
