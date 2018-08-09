@@ -1,26 +1,32 @@
 const express = require('express');
 const https = require('https');
+const fetch = require('node-fetch');
 
 const app = express();
 
 app.get('*', function(req, res) {
   const url = `https://www.reddit.com${req.path}`;
 
-  https.get(url, (resp) => {
-    let data = '';
+  fetch(url)
+      .then(res => res.text())
+      .then(body => res.send(body))
+      .catch(err => res.error(err));
 
-    resp.on('data', (chunk) => {
-      data += chunk;
-    });
+  // https.get(url, (resp) => {
+  //   let data = '';
 
-    resp.on('end', () => {
-      res.send(data);
-    });
+  //   resp.on('data', (chunk) => {
+  //     data += chunk;
+  //   });
 
-  }).on("error", (err) => {
-    console.log("Error: " + err.message);
-    res.error(err);
-  });
+  //   resp.on('end', () => {
+  //     res.send(data);
+  //   });
+
+  // }).on("error", (err) => {
+  //   console.log("Error: " + err.message);
+  //   res.error(err);
+  // });
 });
 
 module.exports = {
