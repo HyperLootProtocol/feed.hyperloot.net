@@ -25,6 +25,9 @@
       <div class="inner" v-if="$store.state.post.id">
         <h1><a :href="$store.state.post.url" target="_blank">{{$store.state.post.title}}</a></h1>
 
+        <img v-if="$store.state.post.thumbnail && !$store.state.post.media_embed.content && $store.state.post.thumbnail !== 'self'" :src="$store.state.post.thumbnail">
+
+        <div v-if="$store.state.post.media" v-html="decode($store.state.post.media_embed.content)"></div>
         <div v-html="decode($store.state.post.selftext_html)"></div>
 
         <social-sharing :url="currentUrl" :title="$store.state.post.title" inline-template>
