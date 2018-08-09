@@ -53,9 +53,10 @@ const createStore = () => {
         const [from, ...parsedId] = id.split(delimiter);
         const uId = parsedId.join('/');
         const params = {
+            headers: { 'X-Requested-With': true }
         };
 
-        const response = await this.$axios.get(`https://www.reddit.com/r/${uId}.json`);
+        const response = await this.$axios.get(`https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/${uId}.json`, params);
         const post = response.data[0].data.children[0].data;
         commit('SET_POST', post);
         commit('SET_LOADING', false);
@@ -68,6 +69,7 @@ const createStore = () => {
             tag,
             hot: true,
             params: {},
+            headers: { 'X-Requested-With': true }
           };
 
           if (!more) {
@@ -82,7 +84,7 @@ const createStore = () => {
             return Promise.resolve();
           }
 
-          return this.$axios.get(`https://www.reddit.com/r/${tag}.json`, params);
+          return this.$axios.get(`https://cors-anywhere.herokuapp.com/https://www.reddit.com/r/${tag}.json`, params);
         });
 
         Promise.all(requests).then(([...responses]) => {
