@@ -1,10 +1,16 @@
 <template>
   <div class="wrapper">
-    <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
+    <div class="action-panel">
       <div class="filter">
         <span v-for="tag in $store.state.tags" :key="tag" @click="removeTag(tag)" class="button">{{tag}}</span>
         <input v-on:keyup.enter="addTag()" v-model="name" placeholder="add tag..." />
       </div>
+      <div class="search">
+        <img src="~/assets/github.svg" width="22">
+        <input type="text" placeholder="Search">
+      </div>
+    </div>
+    <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
 
       <nuxt-link :to="post.innerId" v-for="post in posts" :key="post.id" class="post">
         <span class="title">{{post.title}}</span>
@@ -108,46 +114,68 @@
     margin-left: 1rem;
   }
 
-  .filter {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+  .action-panel {
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
     display: flex;
+    width: 100vw;
+    height: 80px;
+    padding-left: 12rem;
+    background-color: #fff;
+    z-index: 9;
+    border-bottom: 0.1rem solid #dadada;
+  }
+
+  .action-panel .filter {
+    display: flex;
+    flex: 80%;
+    align-items: center;
     flex-wrap: wrap;
   }
 
-  .filter span {
+  .action-panel .filter span {
     box-sizing: border-box;
-    padding: .5rem 1rem;
     margin-right: 1rem;
-    background: #f53743;
     color: #fff;
+    color: #0e1213;
     cursor: pointer;
-    margin-bottom: 1rem;
     height: 2rem;
-    font-size: 1rem;
+    line-height: 1.5;
+    font-size: 1.4rem;
   }
 
-  .filter input {
+  .action-panel .filter input {
     padding: 0 1rem;
-    margin-bottom: 1rem;
     border: 0;
-    background: #f9f9f9;
+    font-size: 1.4rem;
+    line-height: 1.5;
     height: 2rem;
   }
 
-  .button {
-    background: #f53743;
-    color: #fff;
-    border: 0;
-    font-size: 2rem;
-    padding: 1rem 2rem;
-    cursor: pointer;
-    opacity: .7;
-    transition: .3s;
+  .action-panel .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex: 20%;
+    border-left: 0.1rem solid #dadada;
   }
 
-  .button:hover {
-    opacity: 1;
+  .action-panel .search img {
+    position: absolute;
+    top: calc(50% - 11px);
+    right: 2rem;
+    pointer-events: none;
+  }
+
+  .action-panel .search input {
+    box-sizing: border-box;
+    height: 100%;
+    width: calc(100% - 2rem);
+    border: none;
+    font-size: 1.4rem;
+    margin: 0 2rem;
   }
 
   .close {
@@ -171,7 +199,7 @@
     overflow-y: scroll;
     padding-bottom: 2rem;
     scroll-behavior: smooth;
-    padding-right: 2rem;
+    padding: 10rem 2rem 0 0;
   }
 
   .content {
@@ -179,7 +207,7 @@
     background: #f9f9f9;
     flex: 50%;
     overflow: auto;
-    padding: 2rem;
+    padding: 10rem 2rem 2rem 2rem;
   }
 
   .inner {

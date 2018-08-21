@@ -41,18 +41,30 @@
     flex-direction: column;
     border-right: 0.1rem solid #e5e5e5;
     align-items: center;
+    background-color: #fff;
+    z-index: 99;
   }
 
   .sidebar .logo {
+    box-sizing: border-box;
+    min-height: 80px;
     position: relative;
+    width: 100%;
+    display: flex;
     margin-bottom: 3rem;
-    padding: 3rem;
+    align-items: center;
     opacity: 1;
-    border-bottom: 0.1rem solid #e5e5e5;
+    text-decoration: none;
+    border-bottom: 0.1rem solid #dadada;
+  }
+
+  .sidebar .logo img {
+    margin: auto;
   }
 
   .sidebar nav {
     display: flex;
+    padding: 3rem;
     flex-direction: column;
     margin-bottom: auto;
   }
