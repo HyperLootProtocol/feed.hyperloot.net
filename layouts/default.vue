@@ -47,7 +47,8 @@
 
   .sidebar .logo {
     box-sizing: border-box;
-    min-height: 80px;
+    min-height: 8rem;
+    min-width: 10rem;
     position: relative;
     width: 100%;
     display: flex;
@@ -64,7 +65,6 @@
 
   .sidebar nav {
     display: flex;
-    padding: 3rem;
     flex-direction: column;
     margin-bottom: auto;
   }
@@ -79,7 +79,6 @@
     color: #121212;
     font-size: 1.2rem;
   }
-
 
   .sidebar nav a.active {
     color: #f53743;
@@ -97,6 +96,18 @@
   .sidebar .social a {
     opacity: .7;
     margin-bottom: 2rem;
+  }
+
+  @media (max-width: 1368px) {
+
+    .sidebar nav a {
+      margin-bottom: 2rem;
+    }
+
+    .sidebar .social a {
+      margin-bottom: 1rem;
+    }
+
   }
 
 </style>

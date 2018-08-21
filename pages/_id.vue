@@ -240,6 +240,10 @@
   }
 
 
+  @media (max-width: 1368px) {
+
+  }
+
   @media (max-width: 960px) {
     .list.active {
       display: none;
