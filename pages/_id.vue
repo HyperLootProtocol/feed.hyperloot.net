@@ -14,9 +14,11 @@
 
       <nuxt-link :to="post.innerId" v-for="post in posts" :key="post.id" class="post">
         <span class="title">{{post.title}}</span>
-        <span class="time">{{post.time}}</span>
-        &nbsp;
-        <span class="tag">[{{post.tag}}]</span>
+        <span class="post-data">
+          <span class="tag">[{{post.tag}}]</span>
+          &nbsp;
+          <span class="time">{{post.time}}</span>
+        </span>
       </nuxt-link>
 
       <button class="button more" @click="loadMore()">Load more</button>
@@ -78,19 +80,26 @@
   }
 
   .post {
-    margin-bottom: 1rem;
-    padding: 1rem;
+    display: block;
+    padding: 2.5rem;
     background: #fcfcfc;
     font-size: 1.4rem;
-    display: block;
     cursor: pointer;
+    border-bottom: 1px solid #f5f5f5;
     transition: .3s;
   }
 
   .post.nuxt-link-active {
-    background: #f9f9f9;
-    margin-right: -2rem;
-    margin-left: 2rem;
+    background-image: -webkit-linear-gradient( 0deg, rgb(255,255,255) 0%, rgb(245,245,245) 100%);
+  }
+
+  .post .post-data {
+    width: 100%;
+    display: flex;
+  }
+
+  .post .post-data .tag {
+    margin-right: auto;
   }
 
   .post .time {
@@ -199,12 +208,16 @@
     overflow-y: scroll;
     padding-bottom: 2rem;
     scroll-behavior: smooth;
-    padding: 10rem 2rem 0 0;
+    padding: 8rem 0 0 0;
+  }
+
+  .list::-webkit-scrollbar {
+    display: none;
   }
 
   .content {
     position: relative;
-    background: #f9f9f9;
+    background: #f5f5f5;
     flex: 50%;
     overflow: auto;
     padding: 10rem 2rem 2rem 2rem;

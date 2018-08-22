@@ -29,7 +29,7 @@
 
 <style scoped>
   .layout {
-    padding-left: 12rem;
+    padding-left: 10rem;
   }
 
   .sidebar {
