@@ -104,6 +104,10 @@
       margin-bottom: 2rem;
     }
 
+    .sidebar nav a {
+      margin-bottom: 2rem;
+    }
+
     .sidebar .social a {
       margin-bottom: 1rem;
     }
