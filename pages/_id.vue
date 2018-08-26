@@ -15,7 +15,7 @@
       <nuxt-link :to="post.innerId" v-for="post in posts" :key="post.id" class="post">
         <span class="title">{{post.title}}</span>
         <span class="post-data">
-          <span class="tag">[{{post.tag}}]</span>
+          <span class="tag"><img src="~/assets/github.svg" width="20">{{post.tag}}</span>
           &nbsp;
           <span class="time">{{post.time}}</span>
         </span>
@@ -63,6 +63,24 @@
         </social-sharing>
       </div>
     </section>
+
+    <div class="bottom-panel">
+      <div class="course-widget">
+        <div class="course-item">
+          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">-2,63%</span>
+        </div>
+        <div class="course-item">
+          <img src="~/assets/github.svg" width="20"><span class="token">Enjin</span><span class="value">$0,038034</span><span class="currency">USD</span><span class="difference positive">-2,03%</span>
+        </div>
+        <div class="course-item">
+          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">-2,63%</span>
+        </div>
+      </div>
+      <div class="copyright">
+        Copyright &copy; Hyperloot.net
+      </div>
+    </div>
+
   </div>
 </template>
 
@@ -100,6 +118,12 @@
 
   .post .post-data .tag {
     margin-right: auto;
+    display: flex;
+    align-items: center;
+  }
+
+  .post .post-data .tag img {
+    margin-right: 0.75rem;
   }
 
   .post .time {
@@ -252,6 +276,62 @@
     padding: .5rem;
   }
 
+  .bottom-panel {
+    box-sizing: border-box;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding-left: 12rem;
+    background-color: #fff;
+    border-top: 0.1rem solid #f5f5f5;
+  }
+
+  .bottom-panel .course-widget {
+    display: flex;
+    font-size: 1.4rem;
+  }
+
+  .bottom-panel .course-widget .course-item {
+    display: flex;
+    align-items: center;
+    padding: 1.75rem 2.5rem;
+    border-right: 0.1rem solid #e3e3e3;
+  }
+
+  .bottom-panel .course-widget .course-item img {
+    margin-right: 0.8rem;
+  }
+
+  .bottom-panel .course-widget .course-item .token {
+    margin-right: 0.4rem;
+  }
+
+  .bottom-panel .course-widget .course-item .value {
+    font-weight: 700;
+    margin-right: 0.4rem;
+  }
+
+  .bottom-panel .course-widget .course-item .currency {
+    font-weight: 700;
+    margin-right: 0.4rem;
+  }
+
+  .bottom-panel .course-widget .course-item .difference.positive {
+    color: #50bc00;
+  }
+
+  .bottom-panel .course-widget .course-item .difference.negative {
+    color: #fe0000;
+  }
+
+  .bottom-panel .copyright {
+    margin-left: auto;
+    margin-right: 2rem;
+    font-size:  1.4rem;
+  }
 
   @media (max-width: 1368px) {
 
