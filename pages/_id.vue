@@ -68,13 +68,13 @@
     <div class="bottom-panel">
       <div class="course-widget">
         <div class="course-item">
-          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference negative">-2,63%</span>
+          <img src="~/assets/WAX_token.png" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference negative">-2,63%</span>
         </div>
         <div class="course-item">
-          <img src="~/assets/github.svg" width="20"><span class="token">Enjin</span><span class="value">$0,038034</span><span class="currency">USD</span><span class="difference negative">-2,03%</span>
+          <img src="~/assets/enjin_token.png" width="20"><span class="token">Enjin</span><span class="value">$0,038034</span><span class="currency">USD</span><span class="difference negative">-2,03%</span>
         </div>
         <div class="course-item">
-          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">4,03%</span>
+          <img src="~/assets/flip_token.png" width="20"><span class="token">Flip</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">4,03%</span>
         </div>
       </div>
       <div class="copyright">
@@ -271,7 +271,7 @@
     width: 50%;
     height: 8rem;
     position: fixed;
-    left: 0;
+    left: 0;f
     bottom: 5.6rem;
     background-image: -moz-linear-gradient( 90deg, rgb(239,240,242) 0%, rgba(239,240,242,0) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb(239,240,242) 0%, rgba(239,240,242,0) 100%);
