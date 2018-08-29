@@ -3,7 +3,7 @@
     <div class="action-panel">
       <div class="filter">
         <span v-for="tag in $store.state.tags" :key="tag" @click="removeTag(tag)" class="button">{{tag}}</span>
-        <input v-on:keyup.enter="addTag()" v-model="name" placeholder="add tag..." />
+        <button>add tag</button>
       </div>
       <div class="search">
         <img src="~/assets/github.svg" width="22">
@@ -24,8 +24,8 @@
       <button class="button more" @click="loadMore()">Load more</button>
     </section>
 
-    <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
       <nuxt-link to="/" class="button close" v-if="$store.state.post.id">Close</nuxt-link>
+    <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
 
       <span v-if="$store.state.loading" class="loading">Loading...</span>
       <span v-if="!$store.state.loading && !$store.state.post.id" class="loading placeholder">Please select one</span>
@@ -40,7 +40,8 @@
 
         <social-sharing :url="currentUrl" :title="$store.state.post.title" inline-template>
           <div class="share">
-            <div>Share</div>
+            <div class="thread-author">This thread was created by the Post-Match Team.</div>
+            <div class="share-title">Share</div>
             <network network="facebook">
               <img src="~/assets/facebook.svg" width="22">
             </network>
@@ -67,13 +68,13 @@
     <div class="bottom-panel">
       <div class="course-widget">
         <div class="course-item">
-          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">-2,63%</span>
+          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference negative">-2,63%</span>
         </div>
         <div class="course-item">
-          <img src="~/assets/github.svg" width="20"><span class="token">Enjin</span><span class="value">$0,038034</span><span class="currency">USD</span><span class="difference positive">-2,03%</span>
+          <img src="~/assets/github.svg" width="20"><span class="token">Enjin</span><span class="value">$0,038034</span><span class="currency">USD</span><span class="difference negative">-2,03%</span>
         </div>
         <div class="course-item">
-          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">-2,63%</span>
+          <img src="~/assets/github.svg" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">4,03%</span>
         </div>
       </div>
       <div class="copyright">
@@ -107,8 +108,8 @@
     transition: .3s;
   }
 
-  .post.nuxt-link-active {
-    background-image: -webkit-linear-gradient( 0deg, rgb(255,255,255) 0%, rgb(245,245,245) 100%);
+  .post.nuxt-link-active .title {
+    color: #f53743;
   }
 
   .post .post-data {
@@ -127,11 +128,13 @@
   }
 
   .post .time {
-    color: #666;
+    color: #868889;
+    font-weight: 400;
   }
 
   .post .tag {
     color: #333;
+    font-weight: 400;
   }
 
   .post .title {
@@ -179,12 +182,29 @@
     font-size: 1.4rem;
   }
 
-  .action-panel .filter input {
-    padding: 0 1rem;
+  .action-panel .filter button {
+    position: relative;
+    padding: 0 1rem 0 0.5rem;
+    margin-left: 2rem;
     border: 0;
     font-size: 1.4rem;
     line-height: 1.5;
     height: 2rem;
+    text-transform: uppercase;
+    background-color: #F53743;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+
+  .action-panel .filter button:before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: -10px;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right:10px solid #F53743;
   }
 
   .action-panel .search {
@@ -241,10 +261,12 @@
 
   .content {
     position: relative;
-    background: #f5f5f5;
     flex: 50%;
     overflow: auto;
-    padding: 10rem 2rem 2rem 2rem;
+    padding: 10rem 4rem 2rem 3rem;
+    background-image: url(../assets/lol_background.png);
+    background-repeat: no-repeat;
+    background-position: right 92.5%;
   }
 
   .inner {
@@ -253,18 +275,38 @@
 
   .inner h1 {
     margin: 0 0 2rem;
-    font-size: 5rem;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+
+  .inner p {
+    line-height: 1.5;
   }
 
   .share {
     display: flex;
     align-items: center;
     font-weight: bold;
+    padding: 2.5rem 2rem;
+    background-color: #f5f6f8;
+    border-radius: 2rem;
   }
 
-  .share :global(div) {
-    margin-right: 1rem;
+  .share :global(.thread-author) {
+    flex: 75%;
+    margin-right: auto;
+    margin-left: 0;
+    color: #535f6d;
   }
+
+  .share :global(.share-title) {
+    font-weight: 400;
+    color: #c4c8cb;
+  }
+
+/*  .share :global(div) {
+    margin-left: auto;
+  }*/
 
   .share :global(span) {
     display: flex;
@@ -272,7 +314,6 @@
     margin-left: 1rem;
     cursor: pointer;
     filter: invert(100%);
-    background: #fff;
     padding: .5rem;
   }
 
@@ -284,7 +325,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    padding-left: 12rem;
+    padding-left: 10rem;
     background-color: #fff;
     border-top: 0.1rem solid #f5f5f5;
   }

@@ -14,7 +14,6 @@ module.exports = {
       { rel: 'apple-touch-icon', sizes: '120x120', href: '/apple-touch-icon.png' },
       { rel: 'manifest',  href: '/site.webmanifest' },
       { rel: 'mask-icon',  href: '/safari-pinned-tab.svg', color: '#f53743' },
-      { rel: 'stylesheet', href: '//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic|Material+Icons' }
     ]
   },
 
