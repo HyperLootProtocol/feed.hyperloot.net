@@ -6,7 +6,7 @@
         <button>add tag</button>
       </div>
       <div class="search">
-        <img src="~/assets/github.svg" width="22">
+        <img src="~/assets/magnifier.png" width="22">
         <input type="text" placeholder="Search">
       </div>
     </div>
@@ -173,13 +173,13 @@
 
   .action-panel .filter span {
     box-sizing: border-box;
-    margin-right: 1rem;
-    color: #fff;
-    color: #0e1213;
-    cursor: pointer;
     height: 2rem;
+    margin-right: 2rem;
+    font-family: 'Gilroy-Semibold';
     line-height: 1.5;
     font-size: 1.4rem;
+    color: #55606c;
+    cursor: pointer;
   }
 
   .action-panel .filter button {
@@ -229,6 +229,10 @@
     border: none;
     font-size: 1.4rem;
     margin: 0 2rem;
+  }
+
+  .action-panel .search input:focus {
+    outline: none;
   }
 
   .close {
