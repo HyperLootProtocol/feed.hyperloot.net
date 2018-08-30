@@ -18,7 +18,7 @@
     <section class="features-section">
 
       <div class="container">
-        <h2>HyperLoot Open Protocol Solution</h2>
+        <h2>HyperLoot<br class="mobile-show"/> Open Protocol Solution</h2>
         <div class="features-block">
           <div class="features-item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_ethereum.png') + ')' }"></div>
@@ -176,9 +176,6 @@
 
 <style scoped>
 
-  .wrapper {
-  }
-
   section .container {
     max-width: 77.5%;
     margin: 0 auto;
@@ -301,6 +298,10 @@
 
   .features-block .features-item p {
     width: 91%;
+  }
+
+  .mobile-show {
+    display: none;
   }
 
   .opportunities-section {
@@ -657,6 +658,10 @@
       padding-top: 5.6rem;
     }
 
+    .promo-section {
+      min-height: calc(100vh - 5.6rem);
+    }
+
     .promo-section-content {
       margin: auto;
     }
@@ -689,6 +694,163 @@
       border-left: none;
       border-top: 0.2rem solid #fff;
     }
+
+  }
+
+  @media (max-width: 700px) {
+
+    section .container {
+      max-width: 85%;
+    }
+
+    section h2 {
+      font-size: 2.4rem;
+    }
+
+    .promo-section {
+      margin: auto 0;
+      padding: 0 7.5%;
+      background-size: 65%;
+      background-image: url(~/assets/about_page/promo_section_mobile_bg.png);
+    }
+
+    .promo-section-content .about {
+      margin-bottom: 5rem;
+    }
+
+    .promo-section-content h1 {
+      font-size: 3.6rem;
+    }
+
+    .promo-section-content .promo-links {
+      flex-wrap: wrap;
+    }
+
+    .promo-section-content .promo-links a[data-v-096d7a52]:first-of-type {
+      margin: 0 0 2rem 0;
+    }
+
+    .mobile-show {
+      display: inline-block;
+    }
+
+    .features-section {
+      background-color: #fff;
+      background-image: url(~/assets/about_page/about_section_mobile_bg.png);
+      background-position: bottom;
+      padding-bottom: 0;
+    }
+
+    section.features-section h2 {
+      padding-bottom: 3.2rem;
+    }
+
+    .features-block .features-item {
+      width: 100%;
+    }
+
+    .features-block .features-item {
+      padding-bottom: 6.4rem;
+    }
+
+    .features-block .features-item[data-v-096d7a52]:nth-of-type(3) {
+      width: 100%;
+    }
+
+    .features-block .features-item p {
+      width: 100%;
+    }
+
+    .opportunities-block {
+      margin-bottom: 5rem;
+    }
+
+    .opportunities-block .item .number {
+      line-height: 1;
+    }
+
+    .opportunities-block .item h3 {
+      line-height: 1;
+      margin-bottom: 2rem;
+      margin-top: 1rem;
+    }
+
+    .opportunities-block .item:not(:last-of-type) {
+      margin-bottom: 7rem;
+    }
+
+
+    .opportunities-block .item p {
+      margin-bottom: 0;
+    }
+
+    .developers-block .gamers {
+      padding: 4rem 3rem 5rem 3rem;
+    }
+
+    .developers-block .developers {
+      padding: 4rem 3rem 3rem 3rem;
+    }
+
+    .get-started-section {
+      padding: 5rem 0rem 6rem 0;
+    }
+
+    .get-started-section:after {
+      display: none;
+    }
+
+    .get-started-section h2 {
+      margin-bottom: 5rem;
+    }
+
+
+    .roles-block .item {
+      margin-bottom: 4rem;
+    }
+
+    .roles-block .item:first-of-type {
+      margin-bottom: 4rem;
+    }
+
+    .roles-block .item:nth-of-type(2) {
+      margin-bottom: 4rem;
+    }
+
+    .roles-block .item .icon {
+      margin-right: 1.2rem;
+    }
+
+    .roles-block {
+      flex-wrap: wrap;
+    }
+
+    .roles-block .item {
+      width: 100%;
+    }
+
+    .community-section {
+      padding: 6rem 0rem;
+    }
+
+    .community-section .social {
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .community-section .social a {
+      margin-right: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .community-section .social a:not(:last-of-type) {
+      margin-right: 1.6rem;
+    }
+
+    .terms-section .terms img {
+      margin-right: 1.8rem;
+    }
+
 
   }
 
