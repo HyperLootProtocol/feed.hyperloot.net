@@ -24,13 +24,13 @@
       <button class="button more" @click="loadMore()">Load more</button>
     </section>
 
-      <nuxt-link to="/" class="button close" v-if="$store.state.post.id">Close</nuxt-link>
     <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
 
       <span v-if="$store.state.loading" class="loading">Loading...</span>
       <span v-if="!$store.state.loading && !$store.state.post.id" class="loading placeholder">Please select one</span>
 
       <div class="inner" v-if="$store.state.post.id">
+        <nuxt-link to="/" class="button close" v-if="$store.state.post.id"><svg x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><polygon points="16,0.9 15.1,0 8,7.1 0.9,0 0,0.9 7.1,8 0,15.1 0.9,16 8,8.9 15.1,16 16,15.1 8.9,8 "/></svg></nuxt-link>
         <div class="inner-content">
           <h1><a :href="$store.state.post.url" target="_blank">{{$store.state.post.title}}</a></h1>
 
@@ -42,25 +42,27 @@
         <social-sharing :url="currentUrl" :title="$store.state.post.title" inline-template>
           <div class="share">
             <div class="thread-author">This thread was created by the<br/> Post-Match Team.</div>
-            <div class="share-title">Share</div>
-            <network network="facebook">
-              <img src="~/assets/facebook.svg" width="22">
-            </network>
-            <network network="twitter">
-              <img src="~/assets/twitter.svg" width="22">
-            </network>
-            <network network="reddit">
-              <img src="~/assets/reddit.svg" width="22">
-            </network>
-            <network network="telegram">
-              <img src="~/assets/telegram.svg" width="22">
-            </network>
-            <network network="linkedin">
-              <img src="~/assets/linkedin.svg" width="22">
-            </network>
-            <network network="email">
-              <img src="~/assets/email.svg" width="22">
-            </network>
+            <div class="share-block">
+              <div class="share-title">Share</div>
+              <network network="facebook">
+                <img src="~/assets/facebook.svg" width="22">
+              </network>
+              <network network="twitter">
+                <img src="~/assets/twitter.svg" width="22">
+              </network>
+              <network network="reddit">
+                <img src="~/assets/reddit.svg" width="22">
+              </network>
+              <network network="telegram">
+                <img src="~/assets/telegram.svg" width="22">
+              </network>
+              <network network="linkedin">
+                <img src="~/assets/linkedin.svg" width="22">
+              </network>
+              <network network="email">
+                <img src="~/assets/email.svg" width="22">
+              </network>
+            </div>
           </div>
         </social-sharing>
       </div>
@@ -102,7 +104,6 @@
   .post {
     display: block;
     padding: 2.5rem;
-    background: #fcfcfc;
     font-size: 1.4rem;
     cursor: pointer;
     border-bottom: 1px solid #f5f5f5;
@@ -243,15 +244,33 @@
     margin: 0 2rem;
   }
 
+  .action-panel .search input::-webkit-input-placeholder {
+    color: #c0c3c7;
+  }
+
   .action-panel .search input:focus {
     outline: none;
   }
 
   .close {
-    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: -1.6rem;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0.6rem;
+    line-height: 0;
     text-align: right;
-    margin-bottom: 2rem;
-    float: right;
+  }
+
+  .close svg {
+    opacity: 0.5;
+    transition: 0.3s ease;
+  }
+
+  .close svg:hover {
+    opacity: 1;
+    fill: #f53743;
   }
 
   .more {
@@ -291,13 +310,14 @@
     position: relative;
     flex: 50%;
     overflow: auto;
-    padding: 10rem 4rem 2rem 3rem;
+    padding: 12rem 4rem 2rem 3rem;
     background-image: url(../assets/lol_background.png);
     background-repeat: no-repeat;
     background-position: right 92.5%;
   }
 
   .inner {
+    position: relative;
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -310,6 +330,7 @@
     font-size: 3.8rem;
     line-height: 1.35;
     text-transform: uppercase;
+    max-width: 90%;
   }
 
   .inner h1 a {
@@ -333,7 +354,7 @@
   }
 
   .share :global(.thread-author) {
-    flex: 75%;
+    flex: 50%;
     margin-right: auto;
     margin-left: 0;
     color: #535f6d;
@@ -342,6 +363,11 @@
   .share :global(.share-title) {
     font-weight: 400;
     color: #c4c8cb;
+  }
+
+  .share :global(.share-block) {
+    display: flex;
+    align-items: center;
   }
 
   .share :global(span) {
@@ -416,11 +442,21 @@
     font-size:  1.4rem;
   }
 
-  @media (max-width: 1368px) {
+  @media (max-width: 1024px) {
+
+    .share {
+      display: block;
+      padding: 1rem 1rem;
+    }
+
+    .share :global(.thread-author br) {
+      display: none;
+    }
 
   }
 
   @media (max-width: 960px) {
+
     .list.active {
       display: none;
     }
@@ -428,6 +464,11 @@
     .content:not(.active) {
       display: none;
     }
+
+    .list:after {
+      width: 100%;
+    }
+
   }
 </style>
 
