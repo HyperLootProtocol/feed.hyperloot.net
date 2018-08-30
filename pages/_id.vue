@@ -68,7 +68,7 @@
       </div>
     </section>
 
-    <div class="bottom-panel">
+    <div class="bottom-panel fixed">
       <div class="course-widget">
         <div class="course-item">
           <img src="~/assets/WAX_token.png" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference negative">-2,63%</span>
@@ -383,63 +383,6 @@
 
   .share :global(span:hover) {
     opacity: 1;
-  }
-
-  .bottom-panel {
-    box-sizing: border-box;
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    padding-left: 10rem;
-    background-color: #fff;
-    border-top: 0.1rem solid #f5f5f5;
-  }
-
-  .bottom-panel .course-widget {
-    display: flex;
-    font-size: 1.4rem;
-  }
-
-  .bottom-panel .course-widget .course-item {
-    display: flex;
-    align-items: center;
-    padding: 1.75rem 2.5rem;
-    border-right: 0.1rem solid #e3e3e3;
-  }
-
-  .bottom-panel .course-widget .course-item img {
-    margin-right: 0.8rem;
-  }
-
-  .bottom-panel .course-widget .course-item .token {
-    margin-right: 0.4rem;
-  }
-
-  .bottom-panel .course-widget .course-item .value {
-    font-weight: 700;
-    margin-right: 0.4rem;
-  }
-
-  .bottom-panel .course-widget .course-item .currency {
-    font-weight: 700;
-    margin-right: 0.4rem;
-  }
-
-  .bottom-panel .course-widget .course-item .difference.positive {
-    color: #50bc00;
-  }
-
-  .bottom-panel .course-widget .course-item .difference.negative {
-    color: #fe0000;
-  }
-
-  .bottom-panel .copyright {
-    margin-left: auto;
-    margin-right: 2rem;
-    font-size:  1.4rem;
   }
 
   @media (max-width: 1024px) {
