@@ -271,7 +271,7 @@
     width: 50%;
     height: 8rem;
     position: fixed;
-    left: 0;f
+    left: 0;
     bottom: 5.6rem;
     background-image: -moz-linear-gradient( 90deg, rgb(239,240,242) 0%, rgba(239,240,242,0) 100%);
     background-image: -webkit-linear-gradient( 90deg, rgb(239,240,242) 0%, rgba(239,240,242,0) 100%);
