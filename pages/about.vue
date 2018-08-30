@@ -176,6 +176,9 @@
 
 <style scoped>
 
+  .wrapper {
+  }
+
   section .container {
     max-width: 77.5%;
     margin: 0 auto;
@@ -534,7 +537,6 @@
       padding: 7rem 0 24rem 0;
     }
 
-
     section.features-section h2 {
       padding-bottom: 12rem;
     }
@@ -564,6 +566,11 @@
 
   @media (max-width: 1368px) {
 
+    .features-section {
+      background-size: cover;
+      padding-bottom: 16rem;
+    }
+
     .promo-section {
       background-size: 50%;
     }
@@ -576,66 +583,114 @@
       width: 23%;
     }
 
+    .features-block .features-item:first-of-type {
+      margin-left: 2%;
+      margin-right: 1%;
+    }
+
     .features-block .features-item:not(:last-of-type){
       margin-right: 1.5%;
     }
 
     .features-block .features-item:nth-of-type(3) {
+      width: 24%;
       margin-right: 1%;
     }
 
   }
 
+  @media (max-width: 1024px) {
+
+    .promo-section-content {
+      margin-top: auto;
+    }
+
+    .features-section {
+      background-image: none;
+      background-color: #f5f5f6;
+      padding-bottom: 7rem;
+    }
+
+    section.features-section h2 {
+      padding-bottom: 6rem;
+    }
+
+    .features-block {
+      flex-wrap: wrap;
+    }
+
+    .features-block .features-item {
+      width: 50%;
+      margin-left: 0;
+      margin-right: 0;
+    }
+
+    .features-block .features-item[data-v-096d7a52]:not(:last-of-type) {
+      margin-right: 0;
+      margin-left: 0;
+    }
+
+    .features-block .features-item[data-v-096d7a52]:nth-of-type(3) {
+      width: 50%;
+    }
+
+    .opportunities-section {
+      padding: 7rem 0;
+    }
+
+    .opportunities-block {
+      margin-bottom: 4rem;
+    }
+
+    .get-started-section[data-v-096d7a52]:after {
+      height: 30rem;
+      width: 14rem;
+      bottom: -15rem;
+      background-size: contain;
+    }
+
+  }
+
+  @media (max-width: 768px) {
+
+    .wrapper {
+      padding-top: 5.6rem;
+    }
+
+    .promo-section-content {
+      margin: auto;
+    }
+
+    .opportunities-block {
+      flex-wrap: wrap;
+    }
+
+    .opportunities-block .item {
+      width: 100%;
+    }
+
+    .developers-block {
+      flex-direction: column;
+    }
+
+    .developers-block .gamers {
+      border-radius: 1.5rem 1.5rem 0 0;
+      border-right: none;
+      border-bottom: 0.2rem solid #fff;
+    }
+
+    .developers-block .gamers:after {
+      right: calc(50% - 3.6rem);
+      top: calc(100% - 3.6rem);
+    }
+
+    .developers-block .developers {
+      border-radius: 0 0 1.5rem 1.5rem;
+      border-left: none;
+      border-top: 0.2rem solid #fff;
+    }
+
+  }
 
 </style>
 
-<script>
-import moment from 'moment';
-import decode from 'unescape';
-
-export default {
-  name: 'Normal',
-  data: () => ({
-    name: ''
-  }),
-  methods: {
-    addTag() {
-      this.$store.commit('ADD_TAG', this.name);
-      this.name = '';
-      this.$store.dispatch('getPosts');
-    },
-    removeTag(tag) {
-      this.$store.commit('REMOVE_TAG', tag);
-      this.$store.dispatch('getPosts');
-    },
-    loadMore() {
-      this.$store.dispatch('getPosts', { more: true });
-    },
-    decode(val) {
-      return decode(val);
-    }
-  },
-  computed: {
-    posts() {
-      return this.$store.state.posts.slice().sort((a, b) => {
-        return moment.unix(b.created).diff(moment.unix(a.created))
-      })
-    },
-    currentUrl() {
-      return `http://feed.hyperloot.net${this.$nuxt.$route.path}`;
-    }
-  },
-  async fetch({ store, params }) {
-    store.commit('SET_POST', {});
-
-    if (params.id) {
-      await store.dispatch('getPost', params.id);
-    }
-  },
-  async created() {
-    if(!this.$store.state.posts.length) {
-      await this.$store.dispatch('getPosts');
-    }
-  },
-}
-</script>

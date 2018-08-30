@@ -144,3 +144,32 @@ a {
   margin-right: 2rem;
   font-size:  1.4rem;
 }
+
+@media (max-width: 1024px) {
+
+  .bottom-panel .copyright {
+    margin: 0 1.5rem;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .bottom-panel,
+  .bottom-panel .course-widget {
+    flex-wrap: wrap;
+  }
+
+}
+
+@media (max-width: 1024px) {
+
+  .bottom-panel .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 1.6rem 0;
+    border-top: 0.1rem solid #e3e3e3;
+  }
+
+}
+

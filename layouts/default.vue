@@ -130,6 +130,36 @@
 
   }
 
+  @media (max-width: 768px) {
+
+    .layout {
+      padding-left: 0rem;
+    }
+
+    .sidebar {
+      width: 100%;
+      max-height: 5.5rem;
+      align-items: flex-start;
+      border-bottom: 1px solid #dddddd;
+    }
+
+    .sidebar .logo {
+      box-sizing: border-box;
+      padding: 1.2rem;
+      width: auto;
+      margin-bottom: 0;
+      min-width: 3.2rem;
+      min-height: 2.4rem;
+      border-bottom: 0;
+    }
+
+    .sidebar nav,
+    .sidebar .social {
+      display: none;
+    }
+
+  }
+
 </style>
 
 <script>
