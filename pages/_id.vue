@@ -31,16 +31,17 @@
       <span v-if="!$store.state.loading && !$store.state.post.id" class="loading placeholder">Please select one</span>
 
       <div class="inner" v-if="$store.state.post.id">
-        <h1><a :href="$store.state.post.url" target="_blank">{{$store.state.post.title}}</a></h1>
+        <div class="inner-content">
+          <h1><a :href="$store.state.post.url" target="_blank">{{$store.state.post.title}}</a></h1>
 
-        <img v-if="$store.state.post.thumbnail && !$store.state.post.media_embed.content && $store.state.post.thumbnail !== 'self'" :src="$store.state.post.thumbnail">
+          <img v-if="$store.state.post.thumbnail && !$store.state.post.media_embed.content && $store.state.post.thumbnail !== 'self'" :src="$store.state.post.thumbnail">
 
-        <div v-if="$store.state.post.media" v-html="decode($store.state.post.media_embed.content)"></div>
-        <div v-html="decode($store.state.post.selftext_html)"></div>
-
+          <div v-if="$store.state.post.media" v-html="decode($store.state.post.media_embed.content)"></div>
+          <div v-html="decode($store.state.post.selftext_html)"></div>
+        </div>
         <social-sharing :url="currentUrl" :title="$store.state.post.title" inline-template>
           <div class="share">
-            <div class="thread-author">This thread was created by the Post-Match Team.</div>
+            <div class="thread-author">This thread was created by the<br/> Post-Match Team.</div>
             <div class="share-title">Share</div>
             <network network="facebook">
               <img src="~/assets/facebook.svg" width="22">
@@ -117,6 +118,10 @@
     color: #f53743;
   }
 
+  .post.nuxt-link-active .post-data .tag img {
+    opacity: 1;
+  }
+
   .post .post-data {
     width: 100%;
     display: flex;
@@ -130,6 +135,7 @@
 
   .post .post-data .tag img {
     margin-right: 0.75rem;
+    opacity: 0.7;
   }
 
   .post .post-data span {
@@ -292,13 +298,22 @@
   }
 
   .inner {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     font-size: 1.4rem;
   }
 
   .inner h1 {
     margin: 0 0 2rem;
-    font-size: 3rem;
+    font-family: 'BebasNeueBold';
+    font-size: 3.8rem;
+    line-height: 1.35;
     text-transform: uppercase;
+  }
+
+  .inner h1 a {
+    color: #0e1213;
   }
 
   .inner p {
@@ -307,9 +322,12 @@
 
   .share {
     display: flex;
+    flex: 0 0;
     align-items: center;
     font-weight: bold;
-    padding: 2.5rem 2rem;
+    margin-top: auto;
+    margin-bottom: 7rem;
+    padding: 3.5rem 2rem;
     background-color: #f5f6f8;
     border-radius: 2rem;
   }
@@ -326,17 +344,19 @@
     color: #c4c8cb;
   }
 
-/*  .share :global(div) {
-    margin-left: auto;
-  }*/
-
   .share :global(span) {
     display: flex;
     align-items: center;
     margin-left: 1rem;
     cursor: pointer;
-    filter: invert(100%);
+    /*filter: invert(100%);*/
+    opacity: 0.5;
     padding: .5rem;
+    transition: 0.3s ease;
+  }
+
+  .share :global(span:hover) {
+    opacity: 1;
   }
 
   .bottom-panel {
