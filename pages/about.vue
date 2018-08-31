@@ -454,6 +454,7 @@
   }
 
   .roles-block .item p {
+    width: 85%;
     margin: 0;
     font-size: 1.4rem;
     line-height: 1.5;
@@ -561,6 +562,10 @@
 
     .roles-block .item {
       width: 46%;
+    }
+
+    .roles-block .item p {
+      width: 100%;
     }
 
   }
