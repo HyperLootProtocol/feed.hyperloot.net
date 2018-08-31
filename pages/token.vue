@@ -75,7 +75,8 @@
           </div>
         </div>
 
-        <img src="~/assets/token_page/tokenomics_diagram.png" alt="tokenomics diagram">
+        <img src="~/assets/token_page/tokenomics_diagram.png" alt="Tokenomics diagram" class="mobile-hidden">
+        <img src="~/assets/token_page/tokenomics_diagram_mobile.png" alt="Tokenomics diagram mobile">
 
       </div>
 
@@ -203,6 +204,7 @@
   .token-section p {
     margin: 3.2rem 0;
     color: #5c646e;
+    line-height: 1.5;
   }
 
   .token-section .info {
@@ -238,6 +240,7 @@
 
   .tokenomics h2 {
     font-size: 3rem;
+    margin-top: 0;
   }
 
   .tokenomics h3 {
@@ -247,6 +250,7 @@
 
   .tokenomics >>> p {
     margin-bottom: 2.4rem;
+    color: #5c646e;
   }
 
   .tokenomics img {
@@ -419,6 +423,97 @@
 
   @media (max-width: 700px) {
 
+    .token-section h1 {
+      font-size: 3.6rem;
+    }
+
+    .token-section-content {
+      min-width: 84.375%;
+      max-width: 84.375%;
+    }
+
+    .token-section {
+      background-size: 50%;
+    }
+
+    .token-section p {
+      padding-right: 20%;
+    }
+
+    .token-section .info {
+      flex-wrap: wrap;
+    }
+
+    .token-section .info .info-item {
+      width: 33%;
+    }
+
+    .token-section .info .info-item:last-of-type {
+      width: 50%;
+    }
+
+    .token-section .info .info-item span {
+      margin-bottom: 0.5rem;
+    }
+
+    .token-section .info .info-item.type {
+      margin-left: 0;
+    }
+
+    .token-section .info .info-item:first-of-type {
+      margin-bottom: 3rem;
+    }
+
+    .tokenomics {
+      padding: 3.6rem 0;
+      background-image: url(~/assets/token_page/tokenomic_mobile_bg.png);
+      background-position: left bottom;
+      background-size: cover;
+    }
+
+    .tokenomics h2 {
+      font-size: 2.4rem;
+    }
+
+    .token-receive-options {
+      flex-wrap: wrap;
+    }
+
+    .token-receive-options .col {
+      width: 100%;
+    }
+
+    .token-receive-options {
+      margin-bottom: 2rem;
+    }
+
+    .mobile-hidden {
+      display: none;
+    }
+
+    .faq-section {
+      padding-bottom: 2.4rem;
+    }
+
+    .faq-section h2 {
+      margin-bottom: 4rem;
+    }
+
+    .faq-item {
+      padding: 1.6rem;
+    }
+
+    .faq-item .question .status {
+      min-width: 3.6rem;
+      align-self: flex-start;
+    }
+
+    .button-link {
+      margin-top: 2.4rem;
+      padding: 1.6rem 0;
+      box-sizing: border-box;
+      width: 100%;
+    }
 
   }
 
