@@ -391,9 +391,29 @@
 
   @media (max-width: 1024px) {
 
+    .token-section-content {
+      min-width: 70%;
+      margin: 25% 20% 20% 14.25%;
+      background-size: 36.5%;
+    }
+
+    .button-link {
+      width: 17.5%;
+    }
+
   }
 
   @media (max-width: 768px) {
+
+    section .container {
+      max-width: 84.5%;
+    }
+
+    .token-section-content {
+      min-width: 85%;
+      margin: auto auto auto auto;
+      background-size: 52.5%;
+    }
 
   }
 
