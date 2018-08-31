@@ -28,7 +28,7 @@
           </div>
           <div class="info-item">
               <span>Mining</span><br>
-              0.1 DAILY from remaining unmined tokens
+              0.1 DAILY<br> from remaining unmined tokens
           </div>
         </div>
       </div>
@@ -342,11 +342,11 @@
     display: block;
     margin: 6rem auto 0 auto;
     font-family: 'Gilroy-Bold';
-    padding: 1.6rem 12rem;
+    padding: 1.6rem 10rem;
     border-radius: 2.3rem;
     font-size: 1.4rem;
     text-align: center;
-    width: 10%;
+    width: 12.5%;
   }
 
   .button-link.button-link-red {
@@ -357,9 +357,35 @@
 
   @media (max-width: 1440px) {
 
+    section .container {
+      max-width: 72.5%;
+    }
+
+    .token-section {
+      background-size: 47.5%;
+    }
+
+    .token-section-content {
+      min-width: 44.5%;
+      margin: 20% 20% 20% 14.25%;
+    }
+
+    .faq-item .answer p {
+      padding-right: 10%;
+    }
+
   }
 
   @media (max-width: 1368px) {
+
+    .token-section {
+      background-size: 42.5%;
+    }
+
+    .token-section-content {
+      min-width: 50%;
+      margin: 15% 20% 20% 14.25%;
+    }
 
   }
 
