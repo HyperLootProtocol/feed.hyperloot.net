@@ -210,6 +210,10 @@
     cursor: pointer;
   }
 
+  .action-panel .filter button span {
+    display: none;
+  }
+
   .action-panel .filter button:before {
     content: '';
     display: inline-block;
@@ -478,6 +482,46 @@
 
     .bottom-panel.fixed {
       position: static;
+    }
+
+    .content {
+      z-index: 50;
+      background-color: #fff;
+      padding: 8rem 2.5rem 4rem 2.5rem;
+    }
+
+    .inner .close {
+      display: none;
+    }
+
+    .inner h1 {
+      font-size: 3rem;
+      max-width: 100%;
+    }
+
+    .share {
+      margin-top: 2.4rem;
+      margin-bottom: 0px;
+    }
+
+    .share :global(.thread-author) {
+      width: 90%;
+      margin-bottom: 1.2rem;
+    }
+
+    .share :global(.share-title) {
+      width: 100%;
+      margin-bottom: 1.2rem;
+    }
+
+    .share :global(.share-block) {
+      flex-wrap: wrap;
+    }
+
+    .share :global(span) {
+      padding: 0;
+      margin-left: 0rem;
+      margin-right: 1.4rem;
     }
 
   }

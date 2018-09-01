@@ -76,7 +76,7 @@
         </div>
 
         <img src="~/assets/token_page/tokenomics_diagram.png" alt="Tokenomics diagram" class="mobile-hidden">
-        <img src="~/assets/token_page/tokenomics_diagram_mobile.png" alt="Tokenomics diagram mobile">
+        <img src="~/assets/token_page/tokenomics_diagram_mobile.png" alt="Tokenomics diagram mobile" class="desktop-hidden">
 
       </div>
 
@@ -258,6 +258,10 @@
     height: auto;
   }
 
+  .desktop-hidden {
+    display: none;
+  }
+
   .token-receive-options {
     display: flex;
     justify-content: space-between;
@@ -428,12 +432,13 @@
     }
 
     .token-section-content {
+      margin-top: 45%;
       min-width: 84.375%;
       max-width: 84.375%;
     }
 
     .token-section {
-      background-size: 50%;
+      background-size: 45%;
     }
 
     .token-section p {
@@ -487,8 +492,12 @@
       margin-bottom: 2rem;
     }
 
-    .mobile-hidden {
+    .mobile-hidden  {
       display: none;
+    }
+
+    .desktop-hidden {
+      display: block;
     }
 
     .faq-section {
