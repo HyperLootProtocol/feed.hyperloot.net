@@ -280,7 +280,7 @@
       height: 100%;
       border: none;
       font-size: 1.4rem;
-      margin: 0 1rem;
+      margin: 0 2rem;
     }
 
     .sidebar.active .search input::-webkit-input-placeholder {
