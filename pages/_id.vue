@@ -101,6 +101,17 @@
     top: 50%;
   }
 
+  .button.more {
+    font-family: 'Gilroy-Bold';
+    padding: 1.6rem 4rem;
+    border-radius: 2.3rem;
+    font-size: 1.4rem;
+    color: #fff;
+    background-color: #f53743;
+    box-shadow: 0px 6px 14.22px 3.78px rgba(245, 55, 67, 0.22);
+    border: none;
+  }
+
   .post {
     display: block;
     padding: 2.5rem;
@@ -326,6 +337,7 @@
     flex-direction: column;
     height: 100%;
     font-size: 1.4rem;
+    line-height: 1.5;
   }
 
   .inner h1 {
@@ -339,10 +351,6 @@
 
   .inner h1 a {
     color: #0e1213;
-  }
-
-  .inner p {
-    line-height: 1.5;
   }
 
   .share {
