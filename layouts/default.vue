@@ -1,6 +1,6 @@
 <template>
   <div class="layout">
-    <div class="sidebar" :class="{active: mobileMenuOpened}">
+    <div class="sidebar">
       <div class="sidebar-header">
         <a href="https://hyperloot.net/" target="_blank" class="logo">
           <img src="~/assets/logo.svg" width="36" class="small-logo">
@@ -91,6 +91,7 @@
 
   .sidebar .toggle-mnu {
     cursor: pointer;
+    display: none;
   }
 
   .sidebar .toggle-mnu span {
@@ -228,6 +229,7 @@
     }
 
     .sidebar .toggle-mnu {
+      display: block;
       padding: 1.2rem 1.6rem;
       align-self: center;
     }
