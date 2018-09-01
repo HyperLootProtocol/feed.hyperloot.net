@@ -3,7 +3,7 @@
     <div class="action-panel">
       <div class="filter">
         <span v-for="tag in $store.state.tags" :key="tag" @click="removeTag(tag)" class="button">{{tag}}</span>
-        <button>add tag</button>
+        <button>add tag<span>+</span></button>
       </div>
       <div class="search">
         <img src="~/assets/magnifier.png" width="22">
@@ -106,8 +106,8 @@
     padding: 2.5rem;
     font-size: 1.4rem;
     cursor: pointer;
-    border-bottom: 1px solid #f5f5f5;
-    border-right: 1px solid #f5f5f5;
+    border-bottom: 0.1rem solid #f5f5f5;
+    border-right: 0.1rem solid #f5f5f5;
     transition: .3s;
   }
 
@@ -170,7 +170,7 @@
     left: 0;
     display: flex;
     width: 100vw;
-    height: 80px;
+    height: 8rem;
     padding-left: 12rem;
     background-color: #fff;
     z-index: 9;
@@ -214,10 +214,10 @@
     content: '';
     display: inline-block;
     position: absolute;
-    left: -10px;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right:10px solid #F53743;
+    left: -1rem;
+    border-top: 1rem solid transparent;
+    border-bottom: 1rem solid transparent;
+    border-right:1rem solid #F53743;
   }
 
   .action-panel .search {
@@ -230,7 +230,7 @@
 
   .action-panel .search img {
     position: absolute;
-    top: calc(50% - 11px);
+    top: calc(50% - 1.1rem);
     right: 2rem;
     pointer-events: none;
   }
@@ -413,6 +413,75 @@
     }
 
   }
+
+  @media (max-width: 700px) {
+
+    .wrapper {
+      flex-wrap: wrap;
+    }
+
+    .action-panel .search {
+      display: none;
+    }
+
+    .action-panel {
+      height: 5rem;
+      padding-left: 0;
+      top: 5.6rem;
+    }
+
+    .action-panel .filter {
+      padding-left: 1.4rem;
+      flex-wrap: nowrap;
+      overflow-y: scroll;
+      align-items: center;
+    }
+
+    .action-panel .filter:after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 6rem;
+      height: 4.9rem;
+      z-index: 5;
+      background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,0.32) 12%, rgba(255,255,255,1) 37%);
+      background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,0.32) 12%,rgba(255,255,255,1) 37%);
+      background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(255,255,255,0.32) 12%,rgba(255,255,255,1) 37%);
+    }
+
+    .action-panel .filter button {
+      position: absolute;
+      right: 1.4rem;
+      font-size: 0;
+      padding: 0 0.5rem 0 0.5rem;
+      z-index: 10;
+    }
+
+    .action-panel .filter button:before {
+      left: -1rem;
+    }
+
+    .action-panel .filter button span {
+      font-size: 1.4rem;
+      margin-right: 0;
+      color: #fff;
+    }
+
+    .list {
+      padding-top: 10.6rem;
+    }
+
+    .list:after {
+      display: none;
+    }
+
+    .bottom-panel.fixed {
+      position: static;
+    }
+
+  }
+
 </style>
 
 <script>
