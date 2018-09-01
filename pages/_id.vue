@@ -467,6 +467,7 @@
     }
 
     .action-panel .filter button span {
+      display: block;
       font-size: 1.4rem;
       margin-right: 0;
       color: #fff;

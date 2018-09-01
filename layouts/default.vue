@@ -1,7 +1,19 @@
 <template>
   <div class="layout">
-    <div class="sidebar">
-      <a href="https://hyperloot.net/" target="_blank" class="logo"><img src="~/assets/logo.svg" width="36"></a>
+    <div class="sidebar" :class="{active: mobileMenuOpened}">
+      <div class="sidebar-header">
+        <a href="https://hyperloot.net/" target="_blank" class="logo">
+          <img src="~/assets/logo.svg" width="36" class="small-logo">
+          <img src="~/assets/hyperloot_logo.png" class="full-logo">
+        </a>
+
+        <a class="toggle-mnu" href="#" @click="toggleMenu()"><span></span></a>
+      </div>
+
+      <div class="search">
+        <img src="~/assets/magnifier.png" width="22">
+        <input type="text" placeholder="Search">
+      </div>
 
       <nav>
         <a href="/" class="site-link active"><svg width="32" x="0px" y="0px" viewBox="0 0 22.9 22.9" style="enable-background:new 0 0 22.9 22.9;" xml:space="preserve"> <path d="M13,19.2H0.5C0.2,19.2,0,19,0,18.7c0-0.3,0.2-0.5,0.5-0.5H13c0.3,0,0.5,0.2,0.5,0.5C13.5,19,13.3,19.2,13,19.2z"/> <path d="M22.4,12H0.5C0.2,12,0,11.7,0,11.5S0.2,11,0.5,11h21.9c0.3,0,0.5,0.2,0.5,0.5S22.7,12,22.4,12z"/> <path d="M13,4.7H0.5C0.2,4.7,0,4.5,0,4.2s0.2-0.5,0.5-0.5H13c0.3,0,0.5,0.2,0.5,0.5S13.3,4.7,13,4.7z"/></svg>
@@ -16,15 +28,15 @@
       </nav>
 
       <div class="social">
-        <a href="https://www.facebook.com/pg/401874386882912" target="_blank"><img src="~/assets/facebook.svg" width="22"></a>
-        <a href="https://github.com/HyperLootProtocol" target="_blank"><img src="~/assets/github.svg" width="22"></a>
-        <a href="https://twitter.com/Hyperloot" target="_blank"><img src="~/assets/twitter.svg" width="22"></a>
-        <a href="https://www.linkedin.com/company/hyperloot/" target="_blank"><img src="~/assets/linkedin.svg" width="22"></a>
-        <a href="https://medium.com/hyperloot-protocol" target="_blank"><img src="~/assets/medium.svg" width="22"></a>
-        <a href="https://t.me/hyperloot" target="_blank"><img src="~/assets/telegram.svg" width="22" class="image-2"></a>
-        <a href="https://discord.gg/My3PfqK" target="_blank"><img src="~/assets/discord.svg" width="22"></a>
-        <a href="https://www.reddit.com/r/hyperloot/" target="_blank"><img src="~/assets/reddit.svg" width="22"></a>
-        <a href="https://www.youtube.com/channel/UCCHUAJwu5KWBy3P4tzTVWfQ" target="_blank"><img src="~/assets/youtube.svg" width="22"></a>
+        <a href="https://www.facebook.com/pg/401874386882912" target="_blank" class="facebook"><img src="~/assets/facebook.svg" width="22"></a>
+        <a href="https://github.com/HyperLootProtocol" target="_blank" class="github"><img src="~/assets/github.svg" width="22"></a>
+        <a href="https://twitter.com/Hyperloot" target="_blank" class="twitter"><img src="~/assets/twitter.svg" width="22"></a>
+        <a href="https://www.linkedin.com/company/hyperloot/" target="_blank" class="linkedin"><img src="~/assets/linkedin.svg" width="22"></a>
+        <a href="https://medium.com/hyperloot-protocol" target="_blank" class="medium"><img src="~/assets/medium.svg" width="22"></a>
+        <a href="https://t.me/hyperloot" target="_blank" class="telegram"><img src="~/assets/telegram.svg" width="22" class="image-2"></a>
+        <a href="https://discord.gg/My3PfqK" target="_blank" class="discord"><img src="~/assets/discord.svg" width="22"></a>
+        <a href="https://www.reddit.com/r/hyperloot/" target="_blank" class="reddit"><img src="~/assets/reddit.svg" width="22"></a>
+        <a href="https://www.youtube.com/channel/UCCHUAJwu5KWBy3P4tzTVWfQ" target="_blank" class="youtube"><img src="~/assets/youtube.svg" width="22"></a>
       </div>
 
     </div>
@@ -67,6 +79,63 @@
 
   .sidebar .logo img {
     margin: auto;
+  }
+
+  .sidebar .logo .full-logo {
+    display: none;
+  }
+
+  .sidebar .search {
+    display: none;
+  }
+
+  .sidebar .toggle-mnu {
+    cursor: pointer;
+  }
+
+  .sidebar .toggle-mnu span {
+    position: relative;
+    display: block;
+    width: 2.4rem;
+    height: 3px;
+    background: #696969;
+    transition: all .2s ease-in-out;
+  }
+
+  .sidebar .toggle-mnu span:before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    width: 2.4rem;
+    height: 3px;
+    background: #696969;
+    transition: all .2s ease-in-out;
+  }
+
+  .sidebar .toggle-mnu span:after {
+    content: '';
+    position: absolute;
+    top: 8px;
+    background: #696969;
+    width: 2.4rem;
+    height: 3px;
+    transition: all .2s ease-in-out;
+  }
+
+  .sidebar.active .small-logo {
+    display: none;
+  }
+
+  .sidebar.active .toggle-mnu span {
+    background-color: transparent;
+  }
+
+  .sidebar.active .toggle-mnu span:before {
+    transform: rotate(45deg) translate(5px, 6px);
+  }
+
+  .sidebar.active .toggle-mnu span:after {
+    transform: rotate(-45deg) translate(5px, -6px);
   }
 
   .sidebar nav {
@@ -137,25 +206,131 @@
     }
 
     .sidebar {
+      display: block;
       width: 100%;
       max-height: 5.5rem;
-      align-items: flex-start;
       border-bottom: 1px solid #dddddd;
+    }
+
+    .sidebar .sidebar-header {
+      display: flex;
+      justify-content: space-between;
     }
 
     .sidebar .logo {
       box-sizing: border-box;
-      padding: 1.2rem;
-      width: auto;
-      margin-bottom: 0;
       min-width: 3.2rem;
       min-height: 2.4rem;
+      width: auto;
+      padding: 1.2rem 1.6rem;
+      margin-bottom: 0;
       border-bottom: 0;
+    }
+
+    .sidebar .toggle-mnu {
+      padding: 1.2rem 1.6rem;
+      align-self: center;
     }
 
     .sidebar nav,
     .sidebar .social {
       display: none;
+    }
+
+    .sidebar.active .logo .small-logo {
+      display: none;
+    }
+
+    .sidebar.active .logo .full-logo {
+      margin-top: 0.4rem;
+      display: block;
+    }
+
+    .sidebar.active {
+      display: block;
+      background-color: #fff;
+      max-height: none;
+    }
+
+    .sidebar.active .sidebar-header {
+
+    }
+
+    .sidebar.active .search {
+      width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      border-top: 0.1rem solid #dddddd;
+      border-bottom: 0.1rem solid #dddddd;
+    }
+
+    .sidebar.active .search img {
+      position: absolute;
+      top: calc(50% - 1.1rem);
+      right: 1.4rem;
+      pointer-events: none;
+      opacity: 0.4;
+    }
+
+    .sidebar.active .search input {
+      box-sizing: border-box;
+      padding: 2rem 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      font-size: 1.4rem;
+      margin: 0 1rem;
+    }
+
+    .sidebar.active .search input::-webkit-input-placeholder {
+      color: #c0c3c7;
+    }
+
+    .sidebar.active .search input:focus {
+      outline: none;
+    }
+
+    .sidebar.active nav {
+      display: flex;
+      flex-direction: row;
+      padding: 5rem 2.4rem;
+      justify-content: space-between;
+      border-bottom: 0.1rem solid #dddddd;
+    }
+
+    .sidebar.active nav a {
+      margin-bottom: 0;
+    }
+
+    .sidebar.active .social {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      padding: 4rem 2.8rem 4rem 2.8rem;
+    }
+
+    .sidebar.active .social a {
+      width: 33%;
+      margin-bottom: 3rem;
+    }
+
+    .sidebar.active .social a.discord,
+    .sidebar.active .social a.reddit,
+    .sidebar.active .social a.youtube {
+      margin-bottom: 0;
+    }
+
+    .sidebar.active .social a.github,
+    .sidebar.active .social a.medium,
+    .sidebar.active .social a.reddit {
+      text-align: center;
+    }
+
+    .sidebar.active .social a.twitter,
+    .sidebar.active .social a.telegram,
+    .sidebar.active .social a.youtube {
+      text-align: right;
     }
 
   }
@@ -164,6 +339,12 @@
 
 <script>
 export default {
-  name: 'Layout'
+  name: 'Layout',
+  methods: {
+    toggleMenu() {
+      let sidebar = document.querySelector('.sidebar');
+          sidebar.classList.toggle('active');
+    }
+  }
 }
 </script>
