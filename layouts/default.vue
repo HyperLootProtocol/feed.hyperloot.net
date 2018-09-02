@@ -53,6 +53,22 @@
     </div>
 
     <nuxt />
+
+    <div class="bottom-panel fixed">
+      <div class="course-widget">
+
+        <div class="course-item" v-for="tiker in $store.state.tikers" :key="tiker.id" >
+          <span class="token">{{tiker.symbol}}</span><span class="value">${{tiker.quotes.USD.price}}</span>
+          <span class="currency">USD</span><span :class="['difference', tikerStatus(tiker)]">{{tiker.quotes.USD.percent_change_24h}}%</span>
+
+        </div>
+
+      </div>
+
+      <div class="copyright">
+        Copyright &copy; Hyperloot.net
+      </div>
+    </div>
   </div>
 </template>
 
@@ -357,7 +373,16 @@ export default {
     toggleMenu() {
       let sidebar = document.querySelector('.sidebar');
           sidebar.classList.toggle('active');
+    },
+    tikerStatus(tiker) {
+      return tiker.quotes.USD.percent_change_24h < 0 ? 'negative' : 'positive';
     }
-  }
+  },
+  async fetch({ store, params }) {
+    await store.dispatch('getTikerData');
+  },
+  async created() {
+    await this.$store.dispatch('getTikerData');
+  },
 }
 </script>

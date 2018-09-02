@@ -22,7 +22,9 @@ const createStore = () => {
       post: {},
       loading: false,
       tags: ['hyperloot', 'destiny2', 'PUBG', 'FORTnITE', 'DotA2', 'leagueoflegends', 'GlobalOffensive', 'Overwatch', 'wow', 'hearthstone'],
+      disabled_tags: [],
       after: {},
+      tikers: [],
     },
     mutations: {
       UPDATE_AFTER(state, { key, value }) {
@@ -40,11 +42,24 @@ const createStore = () => {
       REMOVE_TAG(state, tag) {
         state.tags = state.tags.filter(item => item !== tag);
       },
+      DISABLE_TAG(state, tag) {
+        state.disabled_tags = [...state.disabled_tags, tag]
+      },
+      ENABLE_TAG(state, tag) {
+        state.disabled_tags = state.disabled_tags.filter(item => item !== tag);
+      },
       SET_LOADING(state, loading) {
         state.loading = loading;
       },
       SET_POST(state, post) {
         state.post = post;
+      },
+      SET_TIKER_DATA(state, data) {
+        state.tikers = data;
+      },
+      ADD_TIKER_DATA(state, data) {
+        state.tikers = [...state.tikers, data];
+        console.log(state.tikers)
       }
     },
     actions: {
@@ -101,6 +116,25 @@ const createStore = () => {
         });
 
         commit('SET_LOADING', false);
+      },
+      async getTikerData({ commit, state }) {
+
+        let requests = tikkersId.map(id => {
+
+          return this.$axios.get(`https://api.coinmarketcap.com/v2/ticker/${id}/`);
+        });
+
+        commit('SET_TIKER_DATA', []);
+
+        Promise.all(requests).then(([...responses]) => {
+          responses.forEach(response => {
+            if (!response) {
+              return;
+            }
+
+            commit('ADD_TIKER_DATA', response.data.data);
+          })
+        });
       }
     }
   })
