@@ -1,11 +1,73 @@
-html {
-  font-size: 10px;
-  font-family: Roboto,Noto Sans,-apple-system,BlinkMacSystemFont,sans-serif;
-  background: #fff;
-  color: #222;
+@font-face {
+  font-family: "Gilroy-Extrabold";
+  src: url("./fonts/Gilroy-Extrabold/Gilroy-Extrabold.eot");
+  src: url("./fonts/Gilroy-Extrabold/Gilroy-Extrabold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/Gilroy-Extrabold/Gilroy-Extrabold.otf") format("opentype"),
+    url("./fonts/Gilroy-Extrabold/Gilroy-Extrabold.svg") format("svg"),
+    url("./fonts/Gilroy-Extrabold/Gilroy-Extrabold.ttf") format("truetype"),
+    url("./fonts/Gilroy-Extrabold/Gilroy-Extrabold.woff") format("woff"),
+    url("./fonts/Gilroy-Extrabold/Gilroy-Extrabold.woff2") format("woff2");
+  font-weight: ExtraBold;
+  font-style: normal;
 }
 
-body {
+@font-face {
+  font-family: "Gilroy-Bold";
+  src: url("./fonts/Gilroy-Bold/Gilroy-Bold.eot");
+  src: url("./fonts/Gilroy-Bold/Gilroy-Bold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/Gilroy-Bold/Gilroy-Bold.otf") format("opentype"),
+    url("./fonts/Gilroy-Bold/Gilroy-Bold.svg") format("svg"),
+    url("./fonts/Gilroy-Bold/Gilroy-Bold.ttf") format("truetype"),
+    url("./fonts/Gilroy-Bold/Gilroy-Bold.woff") format("woff"),
+    url("./fonts/Gilroy-Bold/Gilroy-Bold.woff2") format("woff2");
+  font-weight: Bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-Semibold";
+  src: url("./fonts/Gilroy-Semibold/Gilroy-Semibold.eot");
+  src: url("./fonts/Gilroy-Semibold/Gilroy-Semibold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/Gilroy-Semibold/Gilroy-Semibold.otf") format("opentype"),
+    url("./fonts/Gilroy-Semibold/Gilroy-Semibold.svg") format("svg"),
+    url("./fonts/Gilroy-Semibold/Gilroy-Semibold.ttf") format("truetype"),
+    url("./fonts/Gilroy-Semibold/Gilroy-Semibold.woff") format("woff"),
+    url("./fonts/Gilroy-Semibold/Gilroy-Semibold.woff2") format("woff2");
+  font-weight: SemiBold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Gilroy-Medium";
+  src: url("./fonts/Gilroy-Medium/Gilroy-Medium.eot");
+  src: url("./fonts/Gilroy-Medium/Gilroy-Medium.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/Gilroy-Medium/Gilroy-Medium.otf") format("opentype"),
+    url("./fonts/Gilroy-Medium/Gilroy-Medium.svg") format("svg"),
+    url("./fonts/Gilroy-Medium/Gilroy-Medium.ttf") format("truetype"),
+    url("./fonts/Gilroy-Medium/Gilroy-Medium.woff") format("woff"),
+    url("./fonts/Gilroy-Medium/Gilroy-Medium.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "BebasNeueBold";
+  src: url("./fonts/BebasNeueBold/BebasNeueBold.eot");
+  src: url("./fonts/BebasNeueBold/BebasNeueBold.eot?#iefix") format("embedded-opentype"),
+    url("./fonts/BebasNeueBold/BebasNeueBold.otf") format("opentype"),
+    url("./fonts/BebasNeueBold/BebasNeueBold.svg") format("svg"),
+    url("./fonts/BebasNeueBold/BebasNeueBold.ttf") format("truetype"),
+    url("./fonts/BebasNeueBold/BebasNeueBold.woff") format("woff"),
+    url("./fonts/BebasNeueBold/BebasNeueBold.woff2") format("woff2");
+  font-weight: Bold;
+  font-style: normal;
+}
+
+html {
+  font-size: 10px;
+  font-family: Gilroy-Medium, sans-serif;
+  background: #fff;
+  color: #222;
 }
 
 b, strong, a, h1, h2 {
@@ -21,3 +83,109 @@ a {
   color: white;
   background: #f53743;
 }
+
+.bottom-panel {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-left: 0rem;
+  background-color: #fff;
+  border-top: 0.1rem solid #f5f5f5;
+}
+
+.bottom-panel.fixed {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding-left: 10rem;
+}
+
+.bottom-panel .course-widget {
+  display: flex;
+  font-size: 1.4rem;
+}
+
+.bottom-panel .course-widget .course-item {
+  display: flex;
+  align-items: center;
+  padding: 1.75rem 2.5rem;
+  border-right: 0.1rem solid #e3e3e3;
+}
+
+.bottom-panel .course-widget .course-item img {
+  margin-right: 0.8rem;
+}
+
+.bottom-panel .course-widget .course-item .token {
+  margin-right: 0.4rem;
+}
+
+.bottom-panel .course-widget .course-item .value {
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.bottom-panel .course-widget .course-item .currency {
+  font-weight: 700;
+  margin-right: 0.4rem;
+}
+
+.bottom-panel .course-widget .course-item .difference.positive {
+  color: #50bc00;
+}
+
+.bottom-panel .course-widget .course-item .difference.negative {
+  color: #fe0000;
+}
+
+.bottom-panel .copyright {
+  margin-left: auto;
+  margin-right: 2rem;
+  font-size:  1.4rem;
+}
+
+@media (max-width: 1024px) {
+
+  .bottom-panel .copyright {
+    margin: 0 1.5rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .bottom-panel,
+  .bottom-panel .course-widget {
+    flex-wrap: wrap;
+  }
+
+  .bottom-panel .copyright {
+    width: 100%;
+    text-align: center;
+    padding: 1.6rem 0;
+    border-top: 0.1rem solid #e3e3e3;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .bottom-panel.fixed {
+    padding-left: 0;
+  }
+
+  .bottom-panel .course-widget .course-item {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    border-right: none;
+  }
+
+  .bottom-panel .copyright {
+    margin: 0;
+    padding: 1.6rem 2.4rem;
+    text-align: left;
+  }
+
+}
+
