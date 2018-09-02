@@ -3,14 +3,21 @@ import moment from 'moment';
 
 const delimiter = '*';
 
+const tikkersId = [
+  1380, //LoMoCoin
+  2130, //Enjin
+  2300, //WAX
+]
+
 function filterPosts({ data }) {
-  return data.children.map(({ data: { url, title, id, subreddit, created_utc, created }}) => ({
+  return data.children.map(({ data: { url, title, id, subreddit, created_utc, created, author }}) => ({
     url,
     title,
     id,
     innerId: `reddit${delimiter}${subreddit}${delimiter}${id}`,
     tag: subreddit,
     created,
+    author,
     time: moment.unix(created_utc).fromNow()
   }));
 }
