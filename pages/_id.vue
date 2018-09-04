@@ -2,26 +2,26 @@
   <div class="wrapper">
     <div class="action-panel">
       <div class="filter">
-        <span v-for="tag in $store.state.tags" :key="tag" @click="removeTag(tag)" class="button">{{tag}}</span>
-        <button>add tag<span>+</span></button>
+        <span v-for="tag in $store.state.tags" :key="tag" @click="toggleTag(tag)" :class="{active: !tagIsDisabled(tag), 'button': true}">{{tag}}</span>
+        <!-- <button>add tag<span>+</span></button> -->
       </div>
-      <div class="search">
+      <!-- <div class="search">
         <img src="~/assets/magnifier.png" width="22">
         <input type="text" placeholder="Search">
-      </div>
+      </div> -->
     </div>
     <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
 
       <nuxt-link :to="post.innerId" v-for="post in posts" :key="post.id" class="post">
         <span class="title">{{post.title}}</span>
         <span class="post-data">
-          <span class="tag"><img src="~/assets/github.svg" width="20">{{post.tag}}</span>
+          <span class="tag">{{post.tag}}</span>
           &nbsp;
           <span class="time">{{post.time}}</span>
         </span>
       </nuxt-link>
 
-      <button class="button more" @click="loadMore()">Load more</button>
+      <!-- <button class="button more" @click="loadMore()">Load more</button> -->
     </section>
 
     <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
@@ -41,7 +41,7 @@
         </div>
         <social-sharing :url="currentUrl" :title="$store.state.post.title" inline-template>
           <div class="share">
-            <div class="thread-author">This thread was created by the<br/> Post-Match Team.</div>
+            <div class="thread-author">This thread was created by the<br/> {{$store.state.post.author}}</div>
             <div class="share-block">
               <div class="share-title">Share</div>
               <network network="facebook">
@@ -67,23 +67,6 @@
         </social-sharing>
       </div>
     </section>
-
-    <div class="bottom-panel fixed">
-      <div class="course-widget">
-        <div class="course-item">
-          <img src="~/assets/WAX_token.png" width="20"><span class="token">WAX</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference negative">-2,63%</span>
-        </div>
-        <div class="course-item">
-          <img src="~/assets/enjin_token.png" width="20"><span class="token">Enjin</span><span class="value">$0,038034</span><span class="currency">USD</span><span class="difference negative">-2,03%</span>
-        </div>
-        <div class="course-item">
-          <img src="~/assets/flip_token.png" width="20"><span class="token">Flip</span><span class="value">$0,071850</span><span class="currency">USD</span><span class="difference positive">4,03%</span>
-        </div>
-      </div>
-      <div class="copyright">
-        Copyright &copy; Hyperloot.net
-      </div>
-    </div>
 
   </div>
 </template>
@@ -203,7 +186,13 @@
     line-height: 1.5;
     font-size: 1.4rem;
     color: #55606c;
+    opacity: .3;
     cursor: pointer;
+  }
+
+  .action-panel .filter span.active {
+    opacity: 1;
+
   }
 
   .action-panel .filter button {
@@ -326,7 +315,7 @@
     flex: 50%;
     overflow: auto;
     padding: 12rem 4rem 2rem 3rem;
-    background-image: url(../assets/lol_background.png);
+    /*background-image: url(../assets/lol_background.png);*/
     background-repeat: no-repeat;
     background-position: right 92.5%;
   }
@@ -556,12 +545,24 @@ export default {
       this.$store.commit('REMOVE_TAG', tag);
       this.$store.dispatch('getPosts');
     },
+    toggleTag(tag) {
+      if (this.tagIsDisabled(tag)) {
+        this.$store.commit('ENABLE_TAG', tag);
+      } else {
+        this.$store.commit('DISABLE_TAG', tag);
+      }
+
+      this.$store.dispatch('getPosts');
+    },
     loadMore() {
       this.$store.dispatch('getPosts', { more: true });
     },
     decode(val) {
       return decode(val);
-    }
+    },
+    tagIsDisabled(tag) {
+      return this.$store.state.disabled_tags.includes(tag);
+    },
   },
   computed: {
     posts() {
