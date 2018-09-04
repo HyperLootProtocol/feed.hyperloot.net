@@ -259,7 +259,7 @@
   .close {
     position: absolute;
     right: 0;
-    top: -1.6rem;
+    top: 0;
     width: 1.6rem;
     height: 1.6rem;
     padding: 0.6rem;
@@ -415,7 +415,7 @@
 
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 768px) {
 
     .wrapper {
       flex-wrap: wrap;
@@ -488,9 +488,9 @@
       padding: 8rem 2.5rem 4rem 2.5rem;
     }
 
-    .inner .close {
-      display: none;
-    }
+    /*.inner .close {*/
+      /*display: none;*/
+    /*}*/
 
     .inner h1 {
       font-size: 3rem;

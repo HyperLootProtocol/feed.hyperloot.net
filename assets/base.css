@@ -167,10 +167,6 @@ a {
     border-top: 0.1rem solid #e3e3e3;
   }
 
-}
-
-@media (max-width: 700px) {
-
   .bottom-panel.fixed {
     padding-left: 0;
   }
