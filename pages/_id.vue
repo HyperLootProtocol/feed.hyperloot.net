@@ -533,18 +533,18 @@ import decode from 'unescape';
 export default {
   name: 'Normal',
   data: () => ({
-    name: ''
+    // name: ''
   }),
   methods: {
-    addTag() {
-      this.$store.commit('ADD_TAG', this.name);
-      this.name = '';
-      this.$store.dispatch('getPosts');
-    },
-    removeTag(tag) {
-      this.$store.commit('REMOVE_TAG', tag);
-      this.$store.dispatch('getPosts');
-    },
+    // addTag() {
+    //   this.$store.commit('ADD_TAG', this.name);
+    //   this.name = '';
+    //   this.$store.dispatch('getPosts');
+    // },
+    // removeTag(tag) {
+    //   this.$store.commit('REMOVE_TAG', tag);
+    //   this.$store.dispatch('getPosts');
+    // },
     toggleTag(tag) {
       if (this.tagIsDisabled(tag)) {
         this.$store.commit('ENABLE_TAG', tag);
@@ -554,9 +554,9 @@ export default {
 
       this.$store.dispatch('getPosts');
     },
-    loadMore() {
-      this.$store.dispatch('getPosts', { more: true });
-    },
+    // loadMore() {
+    //   this.$store.dispatch('getPosts', { more: true });
+    // },
     decode(val) {
       return decode(val);
     },

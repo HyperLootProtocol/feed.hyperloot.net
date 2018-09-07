@@ -50,7 +50,7 @@ const createStore = () => {
         state.tags = state.tags.filter(item => item !== tag);
       },
       DISABLE_TAG(state, tag) {
-        state.disabled_tags = [...state.disabled_tags, tag]
+        state.disabled_tags = [...state.disabled_tags, tag];
       },
       ENABLE_TAG(state, tag) {
         state.disabled_tags = state.disabled_tags.filter(item => item !== tag);
@@ -66,7 +66,6 @@ const createStore = () => {
       },
       ADD_TIKER_DATA(state, data) {
         state.tikers = [...state.tikers, data];
-        console.log(state.tikers)
       }
     },
     actions: {
@@ -88,7 +87,9 @@ const createStore = () => {
       async getPosts({ commit, state }, { more = false } = {}) {
         commit('SET_LOADING', true);
 
-        let requests = state.tags.map(tag => {
+        const activeTags = state.tags.filter(tag => !state.disabled_tags.includes(tag));
+
+        let requests = activeTags.map(tag => {
           let params = {
             tag,
             hot: true,
