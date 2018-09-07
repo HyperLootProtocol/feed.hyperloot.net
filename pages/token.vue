@@ -273,7 +273,7 @@
   }
 
   .faq-section {
-    padding: 6rem 0rem;
+    padding: 6rem 0rem 12rem 0;
   }
 
   .faq-section h2 {
@@ -400,6 +400,10 @@
       max-width: 84.5%;
     }
 
+    .faq-section {
+      padding-bottom: 14rem;
+    }
+
     .token-section-content {
       min-width: 85%;
       margin: auto auto auto auto;
@@ -408,7 +412,7 @@
 
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 740px) {
 
     .token-section h1 {
       font-size: 3.6rem;
@@ -505,6 +509,18 @@
       padding: 1.6rem 0;
       box-sizing: border-box;
       width: 100%;
+    }
+
+  }
+
+  @media (max-width: 740px) and ( orientation: landscape ) {
+
+    .token-section {
+      background-size: 35%;
+    }
+
+    .token-section-content {
+      margin-top: 12.5%;
     }
 
   }

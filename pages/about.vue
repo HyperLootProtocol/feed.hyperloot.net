@@ -159,6 +159,10 @@
 
 <style scoped>
 
+  .wrapper {
+    padding-bottom: 5.2rem;
+  }
+
   section .container {
     max-width: 77.5%;
     margin: 0 auto;
@@ -644,6 +648,7 @@
 
     .wrapper {
       padding-top: 5.6rem;
+      padding-bottom: 9rem;
     }
 
     .promo-section {
@@ -685,7 +690,11 @@
 
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 740px) {
+
+    .wrapper {
+      padding-bottom: 0;
+    }
 
     section .container {
       max-width: 85%;
@@ -712,9 +721,10 @@
 
     .promo-section-content .promo-links {
       flex-wrap: wrap;
+      width: 70%;
     }
 
-    .promo-section-content .promo-links a[data-v-096d7a52]:first-of-type {
+    .promo-section-content .promo-links a:first-of-type {
       margin: 0 0 2rem 0;
     }
 
@@ -767,7 +777,6 @@
       margin-bottom: 7rem;
     }
 
-
     .opportunities-block .item p {
       margin-bottom: 0;
     }
@@ -791,7 +800,6 @@
     .get-started-section h2 {
       margin-bottom: 5rem;
     }
-
 
     .roles-block .item {
       margin-bottom: 4rem;
@@ -839,6 +847,23 @@
       margin-right: 1.8rem;
     }
 
+  }
+
+  @media (max-width: 740px) and ( orientation: landscape ) {
+
+    .promo-section-content {
+      min-width: 70%;
+    }
+
+    .promo-section-content .promo-links {
+      align-items: center;
+      width: 100%;
+    }
+
+    .promo-section-content .promo-links a:first-of-type {
+      margin-right: 5%;
+      margin-bottom: 0;
+    }
 
   }
 

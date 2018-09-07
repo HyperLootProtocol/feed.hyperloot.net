@@ -15,7 +15,7 @@
         <input type="text" placeholder="Search">
       </div> -->
 
-      <nav>
+      <nav @click="closeMenuOnLinkClick($event)">
         <nuxt-link to="/" class="site-link">
 
           <svg width="32" x="0px" y="0px" viewBox="0 0 22.9 22.9" style="enable-background:new 0 0 22.9 22.9;" xml:space="preserve"> <path d="M13,19.2H0.5C0.2,19.2,0,19,0,18.7c0-0.3,0.2-0.5,0.5-0.5H13c0.3,0,0.5,0.2,0.5,0.5C13.5,19,13.3,19.2,13,19.2z"/> <path d="M22.4,12H0.5C0.2,12,0,11.7,0,11.5S0.2,11,0.5,11h21.9c0.3,0,0.5,0.2,0.5,0.5S22.7,12,22.4,12z"/> <path d="M13,4.7H0.5C0.2,4.7,0,4.5,0,4.2s0.2-0.5,0.5-0.5H13c0.3,0,0.5,0.2,0.5,0.5S13.3,4.7,13,4.7z"/></svg>
@@ -369,6 +369,12 @@ export default {
     toggleMenu() {
       let sidebar = document.querySelector('.sidebar');
           sidebar.classList.toggle('active');
+    },
+    closeMenuOnLinkClick(e) {
+      let menu = document.querySelector('.toggle-mnu');
+      if(window.innerWidth < 768){
+        menu.click();
+      }
     },
     tikerStatus(tiker) {
       return tiker.quotes.USD.percent_change_24h < 0 ? 'negative' : 'positive';
