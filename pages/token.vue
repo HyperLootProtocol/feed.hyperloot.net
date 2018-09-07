@@ -273,7 +273,7 @@
   }
 
   .faq-section {
-    padding: 6rem 0rem;
+    padding: 6rem 0rem 12rem 0;
   }
 
   .faq-section h2 {
@@ -398,6 +398,10 @@
 
     section .container {
       max-width: 84.5%;
+    }
+
+    .faq-section {
+      padding-bottom: 14rem;
     }
 
     .token-section-content {

@@ -159,6 +159,10 @@
 
 <style scoped>
 
+  .wrapper {
+    padding-bottom: 5.2rem;
+  }
+
   section .container {
     max-width: 77.5%;
     margin: 0 auto;
@@ -644,6 +648,7 @@
 
     .wrapper {
       padding-top: 5.6rem;
+      padding-bottom: 9rem;
     }
 
     .promo-section {
@@ -686,6 +691,10 @@
   }
 
   @media (max-width: 700px) {
+
+    .wrapper {
+      padding-bottom: 0;
+    }
 
     section .container {
       max-width: 85%;
@@ -792,7 +801,6 @@
       margin-bottom: 5rem;
     }
 
-
     .roles-block .item {
       margin-bottom: 4rem;
     }
@@ -838,7 +846,6 @@
     .terms-section .terms img {
       margin-right: 1.8rem;
     }
-
 
   }
 

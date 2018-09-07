@@ -172,7 +172,8 @@ a {
   }
 
   .bottom-panel .course-widget .course-item {
-    width: 100%;
+    box-sizing: border-box;
+    width: 33%;
     padding: 1.2rem 2rem;
     border-right: none;
   }
@@ -181,6 +182,22 @@ a {
     margin: 0;
     padding: 1.6rem 2.4rem;
     text-align: left;
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .wrapper {
+    padding-bottom: 0;
+  }
+
+  .bottom-panel.fixed {
+    position: static;
+  }
+
+  .bottom-panel .course-widget .course-item {
+    width: 100%;
   }
 
 }
