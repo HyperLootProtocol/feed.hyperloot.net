@@ -857,6 +857,7 @@
 
     .promo-section-content .promo-links {
       align-items: center;
+      width: 100%;
     }
 
     .promo-section-content .promo-links a:first-of-type {
