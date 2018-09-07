@@ -412,7 +412,7 @@
 
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 740px) {
 
     .token-section h1 {
       font-size: 3.6rem;
@@ -509,6 +509,18 @@
       padding: 1.6rem 0;
       box-sizing: border-box;
       width: 100%;
+    }
+
+  }
+
+  @media (max-width: 740px) and ( orientation: landscape ) {
+
+    .token-section {
+      background-size: 35%;
+    }
+
+    .token-section-content {
+      margin-top: 12.5%;
     }
 
   }

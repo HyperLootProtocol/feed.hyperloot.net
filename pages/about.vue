@@ -690,7 +690,7 @@
 
   }
 
-  @media (max-width: 700px) {
+  @media (max-width: 740px) {
 
     .wrapper {
       padding-bottom: 0;
@@ -721,9 +721,10 @@
 
     .promo-section-content .promo-links {
       flex-wrap: wrap;
+      width: 70%;
     }
 
-    .promo-section-content .promo-links a[data-v-096d7a52]:first-of-type {
+    .promo-section-content .promo-links a:first-of-type {
       margin: 0 0 2rem 0;
     }
 
@@ -775,7 +776,6 @@
     .opportunities-block .item:not(:last-of-type) {
       margin-bottom: 7rem;
     }
-
 
     .opportunities-block .item p {
       margin-bottom: 0;
@@ -845,6 +845,23 @@
 
     .terms-section .terms img {
       margin-right: 1.8rem;
+    }
+
+  }
+
+  @media (max-width: 740px) and ( orientation: landscape ) {
+
+    .promo-section-content {
+      min-width: 70%;
+    }
+
+    .promo-section-content .promo-links {
+      align-items: center;
+    }
+
+    .promo-section-content .promo-links a:first-of-type {
+      margin-right: 5%;
+      margin-bottom: 0;
     }
 
   }
