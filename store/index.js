@@ -7,7 +7,9 @@ const tikkersId = [
   1380, //LoMoCoin
   2130, //Enjin
   2300, //WAX
-]
+];
+
+let postsRequestToken = '';
 
 function filterPosts({ data }) {
   return data.children.map(({ data: { url, title, id, subreddit, created_utc, created, author }}) => ({
@@ -50,7 +52,7 @@ const createStore = () => {
         state.tags = state.tags.filter(item => item !== tag);
       },
       DISABLE_TAG(state, tag) {
-        state.disabled_tags = [...state.disabled_tags, tag]
+        state.disabled_tags = [...state.disabled_tags, tag];
       },
       ENABLE_TAG(state, tag) {
         state.disabled_tags = state.disabled_tags.filter(item => item !== tag);
@@ -66,7 +68,6 @@ const createStore = () => {
       },
       ADD_TIKER_DATA(state, data) {
         state.tikers = [...state.tikers, data];
-        console.log(state.tikers)
       }
     },
     actions: {
@@ -88,17 +89,18 @@ const createStore = () => {
       async getPosts({ commit, state }, { more = false } = {}) {
         commit('SET_LOADING', true);
 
-        let requests = state.tags.map(tag => {
+        const currentRequestToken = new Date().getTime();
+        postsRequestToken = currentRequestToken;
+
+        const activeTags = state.tags.filter(tag => !state.disabled_tags.includes(tag));
+
+        let requests = activeTags.map(tag => {
           let params = {
             tag,
             hot: true,
             params: {},
             headers: { 'X-Requested-With': true }
           };
-
-          if (!more) {
-            commit('SET_POSTS', []);
-          }
 
           if (more) {
             params.params.after = state.after[tag];
@@ -112,6 +114,14 @@ const createStore = () => {
         });
 
         Promise.all(requests).then(([...responses]) => {
+          if (postsRequestToken !== currentRequestToken) {
+            return;
+          }
+
+          if (!more) {
+            commit('SET_POSTS', []);
+          }
+
           responses.forEach(response => {
             if (!response) {
               return;
