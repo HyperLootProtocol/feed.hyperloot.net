@@ -281,10 +281,6 @@
       max-height: none;
     }
 
-    .sidebar.active .sidebar-header {
-
-    }
-
     .sidebar.active .search {
       width: 100%;
       position: relative;
