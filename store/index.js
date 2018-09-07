@@ -7,7 +7,9 @@ const tikkersId = [
   1380, //LoMoCoin
   2130, //Enjin
   2300, //WAX
-]
+];
+
+let postsRequestToken = '';
 
 function filterPosts({ data }) {
   return data.children.map(({ data: { url, title, id, subreddit, created_utc, created, author }}) => ({
@@ -87,6 +89,9 @@ const createStore = () => {
       async getPosts({ commit, state }, { more = false } = {}) {
         commit('SET_LOADING', true);
 
+        const currentRequestToken = new Date().getTime();
+        postsRequestToken = currentRequestToken;
+
         const activeTags = state.tags.filter(tag => !state.disabled_tags.includes(tag));
 
         let requests = activeTags.map(tag => {
@@ -96,10 +101,6 @@ const createStore = () => {
             params: {},
             headers: { 'X-Requested-With': true }
           };
-
-          if (!more) {
-            commit('SET_POSTS', []);
-          }
 
           if (more) {
             params.params.after = state.after[tag];
@@ -113,6 +114,14 @@ const createStore = () => {
         });
 
         Promise.all(requests).then(([...responses]) => {
+          if (postsRequestToken !== currentRequestToken) {
+            return;
+          }
+
+          if (!more) {
+            commit('SET_POSTS', []);
+          }
+
           responses.forEach(response => {
             if (!response) {
               return;
