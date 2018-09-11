@@ -1,9 +1,5 @@
 <template>
-
   <div class="wrapper">
-
-    <AirDropBanner/>
-
     <section class="token-section">
       <div class="token-section-content">
         <h1>
@@ -91,49 +87,30 @@
         <h2>FAQ<span>.</span></h2>
 
         <div class="faq-block">
+          <spoiler title="The fund, DAO, mining nodes, what are those and why do we need them?">
+            <p>DAO is essentially the team of Hyperloot. DAO uses its tokens to daily improve the product. DAO is the entity that pays for the protocol improvement. However, it does not spend money or tokens on anything else. If you consider yourself up to the task – come join us!</p>
+            <p>The fund works as a usual investment fund. It is tasked with finding great games and supporting their development. You can send us a request here. </p>
+            <p>Hyperloot fund is also interested in partnerships and integrations. If you are interested in adopting our protocol but require help to do so, make sure to hit us up!</p>
+            <p>Mining nodes are an ERC721 tokens that provide an equal part of mined tokens to the owner’s wallet on a daily basis. It is a way to comfortably invest in protocol development and an equal opportunity to participate for everyone. They are sold for HLT tokens. To purchase a mining token you’ll need to send a required amount of HLT tokens to the smart contract. </p>
+          </spoiler>
 
-<!--           <div :class="['faq-item', classes]">
-            <div class="question" @click="toggle($event)">
-              <h3>The fund, DAO, mining nodes, what are those and why do we need them?</h3><div :class="['status', classes]"></div>
-            </div>
-            <div class="answer">
-              <p>DAO is essentially the team of Hyperloot. DAO uses its tokens to daily improve the product. DAO is the entity that pays for the protocol improvement. However, it does not spend money or tokens on anything else. If you consider yourself up to the task – come join us!</p>
-              <p>The fund works as a usual investment fund. It is tasked with finding great games and supporting their development. You can send us a request here. </p>
-              <p>Hyperloot fund is also interested in partnerships and integrations. If you are interested in adopting our protocol but require help to do so, make sure to hit us up!</p>
-              <p>Mining nodes are an ERC721 tokens that provide an equal part of mined tokens to the owner’s wallet on a daily basis. It is a way to comfortably invest in protocol development and an equal opportunity to participate for everyone. They are sold for HLT tokens. To purchase a mining token you’ll need to send a required amount of HLT tokens to the smart contract. </p>
-            </div>
-          </div> -->
+          <spoiler title="How can the tokens be used?">
+            <p>You can use them to pay within the Hyperloot marketplace. They are not the only ones accepted but any HLT transaction within the marketplace bears no transaction fee.</p>
 
-          <dropdown :title="'hello world'"></dropdown>
+            <p>HLT is used as a deposit. When a developer creates new crypto-assets he is required to freeze a compatible amount of HLT. These tokens are not used as a payment, we have no interest in charging developers. It is a way for us to protect the assets and increase the marketplace quality. Во время выпуска предметов внутри системы вам потрубется заморозить кратное количество HLT у себя на счету.</p>
 
+            <p>
+              Mining tokens can only be purchased using HLT.<br>
+              DAO uses tokens to pay for the development tasks.<br>
+              Hyperloot also pays bounties and rewards using HLT.<br>
+              Hyperloot invests using HLT.
+            </p>
+          </spoiler>
 
-          <div class="faq-item">
-            <div class="question">
-              <h3>How can the tokens be used?</h3><div class="status"></div>
-            </div>
-            <div class="answer">
-              <p>You can use them to pay within the Hyperloot marketplace. They are not the only ones accepted but any HLT transaction within the marketplace bears no transaction fee.</p>
-
-              <p>HLT is used as a deposit. When a developer creates new crypto-assets he is required to freeze a compatible amount of HLT. These tokens are not used as a payment, we have no interest in charging developers. It is a way for us to protect the assets and increase the marketplace quality. Во время выпуска предметов внутри системы вам потрубется заморозить кратное количество HLT у себя на счету.</p>
-
-              <p>
-                Mining tokens can only be purchased using HLT.<br>
-                DAO uses tokens to pay for the development tasks.<br>
-                Hyperloot also pays bounties and rewards using HLT.<br>
-                Hyperloot invests using HLT.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-item">
-            <div class="question">
-              <h3>How can I partake in development?</h3><div class="status"></div>
-            </div>
-            <div class="answer">
-              <p>You can just purchase some HLT tokens and hodl them. They will gain value as more developers join and produce more assets.</p>
-              <p>You can also purchase a node and participate in mining. More details can be seen within the smart contract, but you’ll require about 10 000 HLT + per node. Every 30 days the price is raised by 1000 HLT.</p>
-            </div>
-          </div>
+          <spoiler title="How can I partake in development?">
+            <p>You can just purchase some HLT tokens and hodl them. They will gain value as more developers join and produce more assets.</p>
+            <p>You can also purchase a node and participate in mining. More details can be seen within the smart contract, but you’ll require about 10 000 HLT + per node. Every 30 days the price is raised by 1000 HLT.</p>
+          </spoiler>
 
         </div>
 
@@ -292,66 +269,6 @@
     color: #f53743;
   }
 
-  .faq-item .question {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    cursor: pointer;
-  }
-
-  .faq-item .question h3  {
-    margin: 0;
-    font-size: 2rem;
-  }
-
-  .faq-item .question .status {
-    height: 3.6rem;
-    width: 3.6rem;
-    background-color: #fff;
-    border-radius: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .faq-item .question .status {
-    background-image: url(~/assets/token_page/arrow.png);
-    transform: rotate(180deg);
-  }
-
-  .faq-item .question .status.is-active {
-    background-image: url(~/assets/token_page/arrow.png);
-    transform: rotate(0deg);
-  }
-
-  .faq-item {
-    box-sizing: border-box;
-    padding: 3.2rem;
-    margin-bottom: 0.5rem;
-    border-radius: 1.6rem;
-    background-color: #f0f2f5;
-  }
-
-  .faq-item .answer {
-    overflow: hidden;
-    opacity: 0;
-    pointer-events: none;
-    max-height: 0;
-    transform: translateY(-20px);
-    transition: max-height 0.25s, opacity 0.25s, transform 0.5s;
-  }
-
-  .faq-item.is-active .answer {
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-    max-height: 1200px;
-  }
-
-  .faq-item .answer p {
-    line-height: 1.5;
-    padding-right: 20%;
-  }
-
   .button-link {
     display: block;
     margin: 6rem auto 0 auto;
@@ -383,11 +300,6 @@
       min-width: 44.5%;
       margin: 20% 20% 20% 14.25%;
     }
-
-    .faq-item .answer p {
-      padding-right: 10%;
-    }
-
   }
 
   @media (max-width: 1368px) {
@@ -518,15 +430,6 @@
       margin-bottom: 4rem;
     }
 
-    .faq-item {
-      padding: 1.6rem;
-    }
-
-    .faq-item .question .status {
-      min-width: 3.6rem;
-      align-self: flex-start;
-    }
-
     .button-link {
       margin-top: 2.4rem;
       padding: 1.6rem 0;
@@ -552,19 +455,14 @@
 
 <script>
 
-  import dropdown from '.././components/dropdown.vue';
-  import answer from '.././components/answer.vue';
-
-  import AirDropBanner from './../components/AirDropBanner';
+  import spoiler from '@/components/spoiler.vue';
 
   export default {
     data(){
 
     },
     components: {
-      AirDropBanner,
-      dropdown,
-      answer
+      spoiler,
     }
   }
 

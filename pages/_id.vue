@@ -1,12 +1,6 @@
 <template>
   <div class="wrapper">
-
-    <div class="banner-wrapper">
-      <AirDropBanner/>
-    </div>
-
     <div class="content-wrapper">
-
       <div class="action-panel">
         <div class="filter">
           <span v-for="tag in $store.state.tags" :key="tag" @click="toggleTag(tag)" :class="{active: !tagIsDisabled(tag), 'button': true}">{{tag}}</span>
@@ -169,11 +163,11 @@
   .action-panel {
     box-sizing: border-box;
     position: fixed;
-    top: 9rem;
+    top: 0;
     left: 0;
     display: flex;
     width: 100vw;
-    height: 8rem;
+    height: 9rem;
     padding-left: 12rem;
     background-color: #fff;
     z-index: 9;
@@ -297,10 +291,6 @@
   .content-wrapper {
     display: flex;
     height: 100vh;
-  }
-
-  .banner-wrapper {
-    width: 100%;
   }
 
   .list {
@@ -547,16 +537,11 @@
 import moment from 'moment';
 import decode from 'unescape';
 
-import AirDropBanner from './../components/AirDropBanner'
-
 export default {
   name: 'Normal',
   data: () => ({
     // name: ''
   }),
-  components: {
-    AirDropBanner,
-  },
   methods: {
     // addTag() {
     //   this.$store.commit('ADD_TAG', this.name);

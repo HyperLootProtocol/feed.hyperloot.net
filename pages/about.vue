@@ -1,9 +1,5 @@
 <template>
-
   <div class="wrapper">
-
-    <AirDropBanner/>
-
     <section class="promo-section">
       <div class="promo-section-content">
         <div class="about">About <img src="~/assets/about_page/hyperloot_logo.png"></div>
@@ -18,7 +14,6 @@
     </section>
 
     <section class="features-section">
-
       <div class="container">
         <h2>HyperLoot<br class="mobile-show"/> Open Protocol Solution</h2>
         <div class="features-block">
@@ -44,13 +39,10 @@
           </div>
         </div>
       </div>
-
     </section>
 
     <section class="opportunities-section">
-
       <div class="container">
-
         <div class="opportunities-block">
           <div class="item">
             <div class="number">01<span>.</span></div>
@@ -85,7 +77,6 @@
     </section>
 
     <section class="get-started-section">
-
       <div class="container">
 
         <h2>Get Started...</h2>
@@ -98,6 +89,7 @@
               <p>Learn how to buy, sell and store HLPT tokens, or get involved with the <a href="#">HyperLoot community</a></p>
             </div>
           </div>
+
           <div class="item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_developer.png') + ')' }"></div>
             <div>
@@ -105,6 +97,7 @@
               <p>Take a look at what we’re working on. Join GitHub to learn more. <a href="#">Github</a> to learn more.</p>
             </div>
           </div>
+
           <div class="item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_miners.png') + ')' }"></div>
             <div>
@@ -112,6 +105,7 @@
               <p>Earn HyperLoot tokens by joining the decentralised <a href="#">HyperLoot network</a></p>
             </div>
           </div>
+
           <div class="item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_foundation.png') + ')' }"></div>
             <div>
@@ -122,11 +116,9 @@
         </div>
 
       </div>
-
     </section>
 
     <section class="community-section">
-
       <div class="container">
         <h2>Join Out Community</h2>
         <div class="social">
@@ -141,22 +133,18 @@
           <a href="https://www.youtube.com/channel/UCCHUAJwu5KWBy3P4tzTVWfQ" target="_blank"><img src="~/assets/youtube.svg" width="22"></a>
         </div>
       </div>
-
     </section>
 
     <section class="terms-section">
-
       <div class="container">
         <div class="terms">
           <img src="~/assets/about_page/icon_terms.png">
           <a href="#">Terms of use <span>&amp;</span> privacy policy</a>
         </div>
       </div>
-
     </section>
 
   </div>
-
 </template>
 
 <style scoped>
@@ -873,13 +861,8 @@
 
 <script>
 
-import AirDropBanner from './../components/AirDropBanner'
-
 export default {
   name: 'about',
-  components: {
-    AirDropBanner,
-  },
 }
 
 </script>
