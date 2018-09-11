@@ -92,7 +92,7 @@
 
   .sidebar .logo {
     box-sizing: border-box;
-    min-height: 8rem;
+    min-height: 9rem;
     min-width: 10rem;
     position: relative;
     width: 100%;
@@ -363,6 +363,7 @@
 </style>
 
 <script>
+
 export default {
   name: 'Layout',
   methods: {

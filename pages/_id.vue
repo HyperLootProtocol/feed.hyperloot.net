@@ -1,72 +1,81 @@
 <template>
   <div class="wrapper">
-    <div class="action-panel">
-      <div class="filter">
-        <span v-for="tag in $store.state.tags" :key="tag" @click="toggleTag(tag)" :class="{active: !tagIsDisabled(tag), 'button': true}">{{tag}}</span>
-        <!-- <button>add tag<span>+</span></button> -->
-      </div>
-      <!-- <div class="search">
-        <img src="~/assets/magnifier.png" width="22">
-        <input type="text" placeholder="Search">
-      </div> -->
+
+    <div class="banner-wrapper">
+      <AirDropBanner/>
     </div>
-    <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
 
-      <nuxt-link :to="post.innerId" v-for="post in posts" :key="post.id" class="post">
-        <span class="title">{{post.title}}</span>
-        <span class="post-data">
-          <span class="tag">{{post.tag}}</span>
-          &nbsp;
-          <span class="time">{{post.time}}</span>
-        </span>
-      </nuxt-link>
+    <div class="content-wrapper">
 
-      <!-- <button class="button more" @click="loadMore()">Load more</button> -->
-    </section>
-
-    <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
-
-      <span v-if="$store.state.loading" class="loading">Loading...</span>
-      <span v-if="!$store.state.loading && !$store.state.post.id" class="loading placeholder">Please select one</span>
-
-      <div class="inner" v-if="$store.state.post.id">
-        <nuxt-link to="/" class="button close" v-if="$store.state.post.id"><svg x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><polygon points="16,0.9 15.1,0 8,7.1 0.9,0 0,0.9 7.1,8 0,15.1 0.9,16 8,8.9 15.1,16 16,15.1 8.9,8 "/></svg></nuxt-link>
-        <div class="inner-content">
-          <h1><a :href="$store.state.post.url" target="_blank">{{$store.state.post.title}}</a></h1>
-
-          <img v-if="$store.state.post.thumbnail && !$store.state.post.media_embed.content && $store.state.post.thumbnail !== 'self'" :src="$store.state.post.thumbnail">
-
-          <div v-if="$store.state.post.media" v-html="decode($store.state.post.media_embed.content)"></div>
-          <div v-html="decode($store.state.post.selftext_html)"></div>
+      <div class="action-panel">
+        <div class="filter">
+          <span v-for="tag in $store.state.tags" :key="tag" @click="toggleTag(tag)" :class="{active: !tagIsDisabled(tag), 'button': true}">{{tag}}</span>
+          <!-- <button>add tag<span>+</span></button> -->
         </div>
-        <social-sharing :url="currentUrl" :title="$store.state.post.title" inline-template>
-          <div class="share">
-            <div class="thread-author">This thread was created by the<br/> {{$store.state.post.author}}</div>
-            <div class="share-block">
-              <div class="share-title">Share</div>
-              <network network="facebook">
-                <img src="~/assets/facebook.svg" width="22">
-              </network>
-              <network network="twitter">
-                <img src="~/assets/twitter.svg" width="22">
-              </network>
-              <network network="reddit">
-                <img src="~/assets/reddit.svg" width="22">
-              </network>
-              <network network="telegram">
-                <img src="~/assets/telegram.svg" width="22">
-              </network>
-              <network network="linkedin">
-                <img src="~/assets/linkedin.svg" width="22">
-              </network>
-              <network network="email">
-                <img src="~/assets/email.svg" width="22">
-              </network>
-            </div>
-          </div>
-        </social-sharing>
+        <!-- <div class="search">
+          <img src="~/assets/magnifier.png" width="22">
+          <input type="text" placeholder="Search">
+        </div> -->
       </div>
-    </section>
+      <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
+
+        <nuxt-link :to="post.innerId" v-for="post in posts" :key="post.id" class="post">
+          <span class="title">{{post.title}}</span>
+          <span class="post-data">
+            <span class="tag">{{post.tag}}</span>
+            &nbsp;
+            <span class="time">{{post.time}}</span>
+          </span>
+        </nuxt-link>
+
+        <!-- <button class="button more" @click="loadMore()">Load more</button> -->
+      </section>
+
+      <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
+
+        <span v-if="$store.state.loading" class="loading">Loading...</span>
+        <span v-if="!$store.state.loading && !$store.state.post.id" class="loading placeholder">Please select one</span>
+
+        <div class="inner" v-if="$store.state.post.id">
+          <nuxt-link to="/" class="button close" v-if="$store.state.post.id"><svg x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"><polygon points="16,0.9 15.1,0 8,7.1 0.9,0 0,0.9 7.1,8 0,15.1 0.9,16 8,8.9 15.1,16 16,15.1 8.9,8 "/></svg></nuxt-link>
+          <div class="inner-content">
+            <h1><a :href="$store.state.post.url" target="_blank">{{$store.state.post.title}}</a></h1>
+
+            <img v-if="$store.state.post.thumbnail && !$store.state.post.media_embed.content && $store.state.post.thumbnail !== 'self'" :src="$store.state.post.thumbnail">
+
+            <div v-if="$store.state.post.media" v-html="decode($store.state.post.media_embed.content)"></div>
+            <div v-html="decode($store.state.post.selftext_html)"></div>
+          </div>
+          <social-sharing :url="currentUrl" :title="$store.state.post.title" inline-template>
+            <div class="share">
+              <div class="thread-author">This thread was created by the<br/> {{$store.state.post.author}}</div>
+              <div class="share-block">
+                <div class="share-title">Share</div>
+                <network network="facebook">
+                  <img src="~/assets/facebook.svg" width="22">
+                </network>
+                <network network="twitter">
+                  <img src="~/assets/twitter.svg" width="22">
+                </network>
+                <network network="reddit">
+                  <img src="~/assets/reddit.svg" width="22">
+                </network>
+                <network network="telegram">
+                  <img src="~/assets/telegram.svg" width="22">
+                </network>
+                <network network="linkedin">
+                  <img src="~/assets/linkedin.svg" width="22">
+                </network>
+                <network network="email">
+                  <img src="~/assets/email.svg" width="22">
+                </network>
+              </div>
+            </div>
+          </social-sharing>
+        </div>
+      </section>
+
+    </div>
 
   </div>
 </template>
@@ -160,7 +169,7 @@
   .action-panel {
     box-sizing: border-box;
     position: fixed;
-    top: 0;
+    top: 9rem;
     left: 0;
     display: flex;
     width: 100vw;
@@ -282,8 +291,16 @@
   }
 
   .wrapper {
+    height: 100vh;
+  }
+
+  .content-wrapper {
     display: flex;
     height: 100vh;
+  }
+
+  .banner-wrapper {
+    width: 100%;
   }
 
   .list {
@@ -530,11 +547,16 @@
 import moment from 'moment';
 import decode from 'unescape';
 
+import AirDropBanner from './../components/AirDropBanner'
+
 export default {
   name: 'Normal',
   data: () => ({
     // name: ''
   }),
+  components: {
+    AirDropBanner,
+  },
   methods: {
     // addTag() {
     //   this.$store.commit('ADD_TAG', this.name);

@@ -2,6 +2,8 @@
 
   <div class="wrapper">
 
+    <AirDropBanner/>
+
     <section class="token-section">
       <div class="token-section-content">
         <h1>
@@ -90,9 +92,9 @@
 
         <div class="faq-block">
 
-          <div class="faq-item">
-            <div class="question">
-              <h3>The fund, DAO, mining nodes, what are those and why do we need them?</h3><div class="status opened"></div>
+<!--           <div :class="['faq-item', classes]">
+            <div class="question" @click="toggle($event)">
+              <h3>The fund, DAO, mining nodes, what are those and why do we need them?</h3><div :class="['status', classes]"></div>
             </div>
             <div class="answer">
               <p>DAO is essentially the team of Hyperloot. DAO uses its tokens to daily improve the product. DAO is the entity that pays for the protocol improvement. However, it does not spend money or tokens on anything else. If you consider yourself up to the task – come join us!</p>
@@ -100,11 +102,14 @@
               <p>Hyperloot fund is also interested in partnerships and integrations. If you are interested in adopting our protocol but require help to do so, make sure to hit us up!</p>
               <p>Mining nodes are an ERC721 tokens that provide an equal part of mined tokens to the owner’s wallet on a daily basis. It is a way to comfortably invest in protocol development and an equal opportunity to participate for everyone. They are sold for HLT tokens. To purchase a mining token you’ll need to send a required amount of HLT tokens to the smart contract. </p>
             </div>
-          </div>
+          </div> -->
+
+          <dropdown :title="'hello world'"></dropdown>
+
 
           <div class="faq-item">
             <div class="question">
-              <h3>How can the tokens be used?</h3><div class="status opened"></div>
+              <h3>How can the tokens be used?</h3><div class="status"></div>
             </div>
             <div class="answer">
               <p>You can use them to pay within the Hyperloot marketplace. They are not the only ones accepted but any HLT transaction within the marketplace bears no transaction fee.</p>
@@ -122,7 +127,7 @@
 
           <div class="faq-item">
             <div class="question">
-              <h3>How can I partake in development?</h3><div class="status opened"></div>
+              <h3>How can I partake in development?</h3><div class="status"></div>
             </div>
             <div class="answer">
               <p>You can just purchase some HLT tokens and hodl them. They will gain value as more developers join and produce more assets.</p>
@@ -291,6 +296,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   .faq-item .question h3  {
@@ -307,13 +313,14 @@
     background-repeat: no-repeat;
   }
 
-  .faq-item .question .status.opened {
-    background-image: url(~/assets/token_page/arrow.png);
-  }
-
-  .faq-item .question .status.close {
+  .faq-item .question .status {
     background-image: url(~/assets/token_page/arrow.png);
     transform: rotate(180deg);
+  }
+
+  .faq-item .question .status.is-active {
+    background-image: url(~/assets/token_page/arrow.png);
+    transform: rotate(0deg);
   }
 
   .faq-item {
@@ -322,6 +329,22 @@
     margin-bottom: 0.5rem;
     border-radius: 1.6rem;
     background-color: #f0f2f5;
+  }
+
+  .faq-item .answer {
+    overflow: hidden;
+    opacity: 0;
+    pointer-events: none;
+    max-height: 0;
+    transform: translateY(-20px);
+    transition: max-height 0.25s, opacity 0.25s, transform 0.5s;
+  }
+
+  .faq-item.is-active .answer {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+    max-height: 1200px;
   }
 
   .faq-item .answer p {
@@ -527,3 +550,22 @@
 
 </style>
 
+<script>
+
+  import dropdown from '.././components/dropdown.vue';
+  import answer from '.././components/answer.vue';
+
+  import AirDropBanner from './../components/AirDropBanner';
+
+  export default {
+    data(){
+
+    },
+    components: {
+      AirDropBanner,
+      dropdown,
+      answer
+    }
+  }
+
+</script>
