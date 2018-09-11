@@ -1,5 +1,7 @@
 <template>
   <div class="layout">
+    <AirDropBanner />
+
     <div class="sidebar">
       <div class="sidebar-header">
         <a href="https://hyperloot.net/" target="_blank" class="logo">
@@ -75,6 +77,7 @@
 <style scoped>
   .layout {
     padding-left: 10rem;
+    min-height: 100vh;
   }
 
   .sidebar {
@@ -364,8 +367,13 @@
 
 <script>
 
+import AirDropBanner from '@/components/AirDropBanner';
+
 export default {
   name: 'Layout',
+  components: {
+    AirDropBanner,
+  },
   methods: {
     toggleMenu() {
       let sidebar = document.querySelector('.sidebar');

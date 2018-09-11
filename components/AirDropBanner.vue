@@ -2,7 +2,7 @@
 
   <div class="airdrop-banner">
     <div class="content">
-      Hyperloot AirDrop is started <a href="https://t.me/HyperlootAirdropBot">Claim your HLT Now</a>
+      Hyperloot AirDrop is started <a target="_blank" href="https://t.me/HyperlootAirdropBot">Claim your HLT Now</a>
     </div>
   </div>
 
@@ -113,6 +113,9 @@
     display: none;
   }
 
+  .airdrop-banner {
+    margin-top: 5rem;
+  }
 }
 
 @media (max-width: 740px) {

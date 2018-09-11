@@ -1,18 +1,19 @@
 <template>
   <div class="wrapper">
-    <div class="content-wrapper">
-      <div class="action-panel">
-        <div class="filter">
-          <span v-for="tag in $store.state.tags" :key="tag" @click="toggleTag(tag)" :class="{active: !tagIsDisabled(tag), 'button': true}">{{tag}}</span>
-          <!-- <button>add tag<span>+</span></button> -->
-        </div>
-        <!-- <div class="search">
-          <img src="~/assets/magnifier.png" width="22">
-          <input type="text" placeholder="Search">
-        </div> -->
-      </div>
-      <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
 
+    <div class="action-panel">
+      <div class="filter">
+        <span v-for="tag in $store.state.tags" :key="tag" @click="toggleTag(tag)" :class="{active: !tagIsDisabled(tag), 'button': true}">{{tag}}</span>
+        <!-- <button>add tag<span>+</span></button> -->
+      </div>
+      <!-- <div class="search">
+        <img src="~/assets/magnifier.png" width="22">
+        <input type="text" placeholder="Search">
+      </div> -->
+    </div>
+
+    <div class="content-wrapper">
+      <section class="list" :class="{ active: !$store.state.loading && $store.state.post.id }">
         <nuxt-link :to="post.innerId" v-for="post in posts" :key="post.id" class="post">
           <span class="title">{{post.title}}</span>
           <span class="post-data">
@@ -26,7 +27,6 @@
       </section>
 
       <section class="content" :class="{ active: !$store.state.loading && $store.state.post.id }">
-
         <span v-if="$store.state.loading" class="loading">Loading...</span>
         <span v-if="!$store.state.loading && !$store.state.post.id" class="loading placeholder">Please select one</span>
 
@@ -162,13 +162,10 @@
 
   .action-panel {
     box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    left: 0;
     display: flex;
     width: 100vw;
     height: 9rem;
-    padding-left: 12rem;
+    padding-left: 3rem;
     background-color: #fff;
     z-index: 9;
     border-bottom: 0.1rem solid #dadada;
@@ -285,20 +282,24 @@
   }
 
   .wrapper {
+    display: flex;
+    flex-direction: column;
     height: 100vh;
   }
 
   .content-wrapper {
     display: flex;
-    height: 100vh;
+    flex: 1;
   }
 
   .list {
-    flex: 50%;
+    flex: 1;
     overflow-y: scroll;
     padding-bottom: 2rem;
     scroll-behavior: smooth;
-    padding: 8rem 0 0 0;
+    padding: 0 0 0 0;
+    box-sizing: border-box;
+    height: 100%;
   }
 
   .list:after {
@@ -319,12 +320,14 @@
 
   .content {
     position: relative;
-    flex: 50%;
+    flex: 1 ;
     overflow: auto;
-    padding: 12rem 4rem 2rem 3rem;
+    padding: 4rem 4rem 2rem 3rem;
     /*background-image: url(../assets/lol_background.png);*/
     background-repeat: no-repeat;
     background-position: right 92.5%;
+    box-sizing: border-box;
+    height: 100%;
   }
 
   .inner {
@@ -478,7 +481,7 @@
     }
 
     .list {
-      padding-top: 10.6rem;
+      padding-top: 0rem;
     }
 
     .list:after {
