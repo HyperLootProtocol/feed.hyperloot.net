@@ -2,6 +2,8 @@
 
   <div class="wrapper">
 
+    <AirDropBanner/>
+
     <section class="promo-section">
       <div class="promo-section-content">
         <div class="about">About <img src="~/assets/about_page/hyperloot_logo.png"></div>
@@ -868,4 +870,18 @@
   }
 
 </style>
+
+<script>
+
+import AirDropBanner from './../components/AirDropBanner'
+
+export default {
+  name: 'about',
+  components: {
+    AirDropBanner,
+  },
+}
+
+</script>
+
 

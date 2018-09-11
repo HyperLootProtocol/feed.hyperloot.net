@@ -2,6 +2,8 @@
 
   <div class="wrapper">
 
+    <AirDropBanner/>
+
     <section class="token-section">
       <div class="token-section-content">
         <h1>
@@ -291,6 +293,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
   }
 
   .faq-item .question h3  {
@@ -527,3 +530,22 @@
 
 </style>
 
+<script>
+
+  import dropdown from '.././components/dropdown.vue';
+  import answer from '.././components/answer.vue';
+
+  import AirDropBanner from './../components/AirDropBanner';
+
+  export default {
+    data(){
+
+    },
+    components: {
+      AirDropBanner,
+      dropdown,
+      answer
+    }
+  }
+
+</script>
