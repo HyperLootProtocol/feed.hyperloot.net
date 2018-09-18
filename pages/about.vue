@@ -15,7 +15,7 @@
 
     <section class="features-section">
       <div class="container">
-        <h2>HyperLoot<br class="mobile-show"/> Open Protocol Solution</h2>
+        <h2>HyperLoot<br class="mobile-show"/>Open Protocol Solution</h2>
         <div class="features-block">
           <div class="features-item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_ethereum.svg') + ')' }"></div>
