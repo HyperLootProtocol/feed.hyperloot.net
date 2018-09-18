@@ -2,7 +2,7 @@
   <div class="wrapper">
     <section class="promo-section">
       <div class="promo-section-content">
-        <div class="about">About<img src="~/assets/about_page/hyperloot_logo.svg"></div>
+        <div class="about">About<img src="~/assets/about_page/hyperloot_logo.svg" width="22"></div>
         <h1>
           FIRST ESPORT MONETIZATION<br>PLATFORM <span>AS A SERVICE</span>
         </h1>
