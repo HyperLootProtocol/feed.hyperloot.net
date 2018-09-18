@@ -2,9 +2,9 @@
   <div class="wrapper">
     <section class="promo-section">
       <div class="promo-section-content">
-        <div class="about">About<img src="~/assets/about_page/hyperloot_logo.png"></div>
+        <div class="about">About<img src="~/assets/about_page/hyperloot_logo.svg"></div>
         <h1>
-          FIRST ESPORT MONETIZATION PLATFORM <span>AS A SERVICE</span>
+          FIRST ESPORT MONETIZATION<br>PLATFORM <span>AS A SERVICE</span>
         </h1>
         <div class="promo-links">
           <a href="https://github.com/HyperLootProtocol/starter-pack" class="button-link button-link-red">GitHub</a>
@@ -27,7 +27,7 @@
             <h3>Marketplace & betting</h3>
             <p>HyperLoot allows third parties to integrate with games that use our protocol for asset creation.</p>
           </div>
-          <div class="features-item wide-item">
+          <div class="features-item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_console.png') + ')' }"></div>
             <h3>Protocol & client API</h3>
             <p>Smart contracts & HyperLoot SDK allows developers to create blockchain based in-game assets.</p>
