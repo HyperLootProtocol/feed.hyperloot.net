@@ -222,7 +222,7 @@
 
   .features-section {
     padding: 15rem 0 24rem 0;
-    background-image: url(~/assets/about_page/about_section_bg.svg);
+    background-image: url(~/assets/about_page/about_section_bg.png);
     background-size: cover;
     background-repeat: no-repeat;
   }
