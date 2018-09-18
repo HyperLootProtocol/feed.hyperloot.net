@@ -2,13 +2,13 @@
   <div class="wrapper">
     <section class="promo-section">
       <div class="promo-section-content">
-        <div class="about">About <img src="~/assets/about_page/hyperloot_logo.png"></div>
+        <div class="about">About<img src="~/assets/about_page/hyperloot_logo.png"></div>
         <h1>
-          Decentralized P2P marketplace<br/> and ownership solution<br/> for <span>in-game items</span>
+          FIRST ESPORT MONETIZATION PLATFORM <span>AS A SERVICE</span>
         </h1>
         <div class="promo-links">
-          <a href="#" class="button-link button-link-red">Get whitelisted</a>
-          <a href="#" class="button-link">Whitepaper</a>
+          <a href="https://github.com/HyperLootProtocol/starter-pack" class="button-link button-link-red">GitHub</a>
+          <a href="https://github.com/HyperLootProtocol/Hyperloot-Documentation/blob/master/product/ONEPAGER.md" class="button-link">One pager</a>
         </div>
       </div>
     </section>
@@ -19,23 +19,23 @@
         <div class="features-block">
           <div class="features-item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_ethereum.png') + ')' }"></div>
-            <h3>Ethereum</h3>
-            <p>Hyperloot utilizes Ethereum blockchain as a proven and reliable infrastructure</p>
+            <h3>Blockchain layer</h3>
+            <p>Hyperloot utilizes Ethereum blockchain as a proven and reliable infrastructure.</p>
           </div>
           <div class="features-item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_wallet.png') + ')' }"></div>
-            <h3>Marketplace &amp; Wallet</h3>
-            <p>Marketplace and wallets – a&nbsp;place where assets are stored and can be exchanged.</p>
+            <h3>Marketplace & betting</h3>
+            <p>HyperLoot allows third parties to integrate with games that use our protocol for asset creation.</p>
           </div>
           <div class="features-item wide-item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_console.png') + ')' }"></div>
-            <h3>Alchemy protocol &amp; Client API</h3>
-            <p>Protocol – a set of smart contracts that defines token and asset emission rules</p>
+            <h3>Protocol & client API</h3>
+            <p>Smart contracts & HyperLoot SDK allows developers to create blockchain based in-game assets.</p>
           </div>
           <div class="features-item">
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_joystick.png') + ')' }"></div>
-            <h3>Games &amp; apps</h3>
-            <p>Hyperloot SDK is an interface that connects any game with an inventory to the platform!</p>
+            <h3>Games & apps</h3>
+            <p>Any game with inventory can be integrated into HyperLoot Platfrom as a Service (PaaS).</p>
           </div>
         </div>
       </div>
@@ -47,28 +47,28 @@
           <div class="item">
             <div class="number">01<span>.</span></div>
             <h3>Create</h3>
-            <p>Multiple crypto-secured assets starting with in-game purchases  all the way to user accounts</p>
+            <p>Multiple assets, like in-game purchases, user accounts or discounts can be tokenized.</p>
           </div>
           <div class="item">
             <div class="number">02<span>.</span></div>
             <h3>Trade</h3>
-            <p>Any asset you got! A unified profit pool with an open economy will regulate prices for well-demanded items</p>
+            <p>Trade and exchange any in-game asset! Hyperloot marketplace is used for price discovery.</p>
           </div>
           <div class="item">
             <div class="number">03<span>.</span></div>
             <h3>Promote</h3>
-            <p>Any way you can imagine. A better-than-free model where you utilize your own items to cross-promote within the community</p>
+            <p>New monetization and promotion model. Use eSport betting to exponentially grow and engage your community.</p>
           </div>
         </div>
 
         <div class="developers-block">
           <div class="gamers">
             <h4>Built for gamers</h4>
-            <p>Forever direct ownership of what you paid for. Open and accessible trading inside or between games. Connect, trade and profit with an all-gamer community</p>
+            <p>Forever direct ownership of what you paid for. Open and accessible trading inside or between games. Connect, trade and profit with an all-gamer community.</p>
           </div>
           <div class="developers">
             <h4>With developers in mind</h4>
-            <p>Easy and quick to adopt without changing your code. Convert in-game items into crypto-protected assets. Join DAO and attract investments to develop your game</p>
+            <p>Easy and quick to adopt without changing your economy or code. Join DAO and attract investment to develop your game.</p>
           </div>
         </div>
 
@@ -86,7 +86,7 @@
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_newbie.png') + ')' }"></div>
             <div>
               <h4>Newbies</h4>
-              <p>Learn how to buy, sell and store HLPT tokens, or get involved with the <a href="#">HyperLoot community</a></p>
+              <p><a href="https://discord.gg/qEH8PHk">Join our Discord Community</a> and learn how to create and traded in-game assets.</p>
             </div>
           </div>
 
@@ -94,7 +94,7 @@
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_developer.png') + ')' }"></div>
             <div>
               <h4>Developers</h4>
-              <p>Take a look at what we’re working on. Join GitHub to learn more. <a href="#">Github</a> to learn more.</p>
+              <p>You can work with us publically or anonymously. Integrate your games or help us with development. Take a look at what we’re working on on <a href="https://github.com/HyperLootProtocol">Github</a>.</p>
             </div>
           </div>
 
@@ -102,7 +102,7 @@
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_miners.png') + ')' }"></div>
             <div>
               <h4>Miners</h4>
-              <p>Earn HyperLoot tokens by joining the decentralised <a href="#">HyperLoot network</a></p>
+              <p><a href="https://hyperloot.net/token">Get MasterNode tokens</a>, mine HLT, provide security and clearing to the HyperLoot network.</p>
             </div>
           </div>
 
@@ -110,7 +110,7 @@
             <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_foundation.png') + ')' }"></div>
             <div>
               <h4>Foundation</h4>
-              <p>If you would like to get involved, or would simply like to support the team, there are handful of options at your disposal. <a href="#">Contact us!</a></p>
+              <p>If you like to get involved, or simply like to support the team, there are handful of options at your disposal. <a href="mailto:alex@hyperloot.net">Contact us!</a></p>
             </div>
           </div>
         </div>
