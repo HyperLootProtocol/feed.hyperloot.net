@@ -2,7 +2,7 @@
   <div class="wrapper">
     <section class="promo-section">
       <div class="promo-section-content">
-        <div class="about">About<img src="~/assets/about_page/hyperloot_logo.svg" width="22"></div>
+        <div class="about">About<img src="~/assets/about_page/hyperloot_logo.svg" width="128"></div>
         <h1>
           FIRST ESPORT MONETIZATION<br>PLATFORM <span>AS A SERVICE</span>
         </h1>
@@ -18,22 +18,22 @@
         <h2>HyperLoot<br class="mobile-show"/> Open Protocol Solution</h2>
         <div class="features-block">
           <div class="features-item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_ethereum.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_ethereum.svg') + ')' }"></div>
             <h3>Blockchain layer</h3>
             <p>Hyperloot utilizes Ethereum blockchain as a proven and reliable infrastructure.</p>
           </div>
           <div class="features-item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_wallet.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_wallet.svg') + ')' }"></div>
             <h3>Marketplace & betting</h3>
             <p>HyperLoot allows third parties to integrate with games that use our protocol for asset creation.</p>
           </div>
           <div class="features-item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_console.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_console.svg') + ')' }"></div>
             <h3>Protocol & client API</h3>
             <p>Smart contracts & HyperLoot SDK allows developers to create blockchain based in-game assets.</p>
           </div>
           <div class="features-item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_joystick.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_joystick.svg') + ')' }"></div>
             <h3>Games & apps</h3>
             <p>Any game with inventory can be integrated into HyperLoot Platfrom as a Service (PaaS).</p>
           </div>
@@ -83,7 +83,7 @@
 
         <div class="roles-block">
           <div class="item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_newbie.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_newbie.svg') + ')' }"></div>
             <div>
               <h4>Newbies</h4>
               <p><a href="https://discord.gg/qEH8PHk">Join our Discord Community</a> and learn how to create and traded in-game assets.</p>
@@ -91,7 +91,7 @@
           </div>
 
           <div class="item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_developer.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_developer.svg') + ')' }"></div>
             <div>
               <h4>Developers</h4>
               <p>You can work with us publically or anonymously. Integrate your games or help us with development. Take a look at what we’re working on on <a href="https://github.com/HyperLootProtocol">Github</a>.</p>
@@ -99,7 +99,7 @@
           </div>
 
           <div class="item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_miners.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_miners.svg') + ')' }"></div>
             <div>
               <h4>Miners</h4>
               <p><a href="https://hyperloot.net/token">Get MasterNode tokens</a>, mine HLT, provide security and clearing to the HyperLoot network.</p>
@@ -107,7 +107,7 @@
           </div>
 
           <div class="item">
-            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_foundation.png') + ')' }"></div>
+            <div class="icon" v-bind:style="{ 'background-image': 'url(' + require('~/assets/about_page/icon_foundation.svg') + ')' }"></div>
             <div>
               <h4>Foundation</h4>
               <p>If you like to get involved, or simply like to support the team, there are handful of options at your disposal. <a href="mailto:alex@hyperloot.net">Contact us!</a></p>
@@ -131,15 +131,6 @@
           <a href="https://discord.gg/My3PfqK" target="_blank"><img src="~/assets/discord.svg" width="22"></a>
           <a href="https://www.reddit.com/r/hyperloot/" target="_blank"><img src="~/assets/reddit.svg" width="22"></a>
           <a href="https://www.youtube.com/channel/UCCHUAJwu5KWBy3P4tzTVWfQ" target="_blank"><img src="~/assets/youtube.svg" width="22"></a>
-        </div>
-      </div>
-    </section>
-
-    <section class="terms-section">
-      <div class="container">
-        <div class="terms">
-          <img src="~/assets/about_page/icon_terms.png">
-          <a href="#">Terms of use <span>&amp;</span> privacy policy</a>
         </div>
       </div>
     </section>
@@ -231,7 +222,7 @@
 
   .features-section {
     padding: 15rem 0 24rem 0;
-    background-image: url(~/assets/about_page/about_section_bg.png);
+    background-image: url(~/assets/about_page/about_section_bg.svg);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -338,7 +329,7 @@
     color: #fff;
     border-radius: 1.5rem 0 0 1.5rem;
     border-right: 0.35rem solid #fff;
-    background-image: url(~/assets/about_page/joystick_bg.png);
+    background-image: url(~/assets/about_page/joystick_bg.svg);
   }
 
   .developers-block .gamers:after {
@@ -363,7 +354,7 @@
     color: #000;
     border-radius: 0 1.5rem 1.5rem 0;
     border-left: 0.35rem solid #fff;
-    background-image: url(~/assets/about_page/thinking_bg.png);
+    background-image: url(~/assets/about_page/thinking_bg.svg);
   }
 
   .developers-block h4 {
