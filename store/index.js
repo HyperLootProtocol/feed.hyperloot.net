@@ -4,7 +4,7 @@ import moment from 'moment';
 const delimiter = '*';
 
 const tikkersId = [
-  1380, //LoMoCoin
+  2588, //Loom Network
   2130, //Enjin
   2300, //WAX
 ];
